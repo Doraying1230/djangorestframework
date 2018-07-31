@@ -34,6 +34,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# 替换系统的用户
+AUTH_USER_MODEL = "users.UserProfile"
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,7 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'DjangoUeditor',  # 富文本
     'users.apps.UsersConfig',
+    'goods',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +87,7 @@ WSGI_APPLICATION = 'lg.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 使用mysql
-        'NAME': 'gang',  # 数据库名称
+        'NAME': 'lg',  # 数据库名称
         'USER': 'root',  # 连接数据库的账号
         'PASSWORD': 'mysql',  # 连接数据库的密码
         'HOST': '127.0.0.1',  # 或者localhost，主机
