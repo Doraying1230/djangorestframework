@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0b7a510-2366-4021-b0ea-7fc9c3bcad24" name="Default" comment="1102" />
+    <list default="true" id="b0b7a510-2366-4021-b0ea-7fc9c3bcad24" name="Default" comment="1102">
+      <change afterPath="$PROJECT_DIR$/../AtguiguShop/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AtguiguShop/.idea/AtguiguShop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../AtguiguShop/.idea/AtguiguShop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AtguiguShop/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AtguiguShop/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AtguiguShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AtguiguShop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AtguiguShop/AtguiguShop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AtguiguShop/AtguiguShop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +37,8 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -40,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lg/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="32" selection-end-column="12" />
+            <state relative-caret-position="690">
+              <caret line="101" column="62" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -76,11 +84,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="316" />
-    <option name="y" value="94" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
     <option name="width" value="1382" />
-    <option name="height" value="1040" />
+    <option name="height" value="868" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -116,7 +123,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AtguiguShop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -200,9 +207,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="316" y="94" width="1382" height="1040" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17938931" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12875536" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -256,8 +263,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lg/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="32" selection-end-column="12" />
+        <state relative-caret-position="690">
+          <caret line="101" column="62" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="62" />
         </state>
       </provider>
     </entry>
