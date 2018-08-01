@@ -14,6 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+# from django.views.generic import TemplateView
+
 import xadmin
 from lg.settings import MEDIA_ROOT
 from django.views.static import serve
@@ -33,6 +35,7 @@ urlpatterns = [
     # 支持文档生成的url,结尾一定不能写$
     url(r'docs/', include_docs_urls(title="***商店")),
     # 登录时候用的url,调试api的时候用到
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    # url(r'^index/', TemplateView.as_view(template_name='index.html'), name="index"),
 
 ]
