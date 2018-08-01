@@ -19,10 +19,10 @@ sys.path.insert(0, BASE_DIR)
 sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 sys.path.insert(0, os.path.join(BASE_DIR, "extra_apps"))
 
-print("BASE_DIR==", BASE_DIR)
-print("sys.path[0]==", sys.path[0])
-print("sys.path[1]==", sys.path[1])
-print("sys.path[2]==", sys.path[2])
+# print("BASE_DIR==", BASE_DIR)
+# print("sys.path[0]==", sys.path[0])
+# print("sys.path[1]==", sys.path[1])
+# print("sys.path[2]==", sys.path[2])
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -46,8 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'DjangoUeditor',  # 富文本
+    'xadmin',
+    'crispy_forms',
     'users.apps.UsersConfig',
     'goods',
+    'trade',
+    'user_operation',
 ]
 
 MIDDLEWARE = [
@@ -87,7 +91,7 @@ WSGI_APPLICATION = 'lg.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 使用mysql
-        'NAME': 'lg',  # 数据库名称
+        'NAME': 'ligang',  # 数据库名称
         'USER': 'root',  # 连接数据库的账号
         'PASSWORD': 'mysql',  # 连接数据库的密码
         'HOST': '127.0.0.1',  # 或者localhost，主机
@@ -117,15 +121,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
