@@ -2,118 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0b7a510-2366-4021-b0ea-7fc9c3bcad24" name="Default" comment="gooods and users">
-      <change afterPath="$PROJECT_DIR$/apps/goods/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/goods/views_base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/trade/migrations/0002_auto_20180801_1548.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/user_operation/migrations/0002_auto_20180801_1548.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/users/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_util/data/category_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_util/data/product_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_util/import_category_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_util/import_product_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/banner/banner1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/banner/banner1_iWDKRKy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/banner/banner2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/banner/banner2_23Co3IO.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/banner/banner2_OV32jj8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/banner/banner3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/banner/banner3_QA3QuOr.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brand/images/scsg-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brand/images/sxsp-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brand/images/sxsp-1_LQiblbZ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brand/images/sxsp-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brand/images/sxsp-2_r5Y31gm.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brand/images/sxsp-3_jG6lwp4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brand/images/sxsp-3_p6QnMEd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brands/lyfs-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brands/lyfs-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brands/scsg-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brands/scsg-2_G6LV34f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brands/scsg-2_s2g3L7M.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brands/scsg-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brands/sxsp-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brands/sxsp-1_HPZZvbI.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brands/sxsp-1_KDntI6h.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brands/sxsp-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brands/sxsp-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brands/sxsp-3_jG6lwp4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/brands/sxsp-3_p6QnMEd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/10_P_1448944572085.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/11_P_1448944388277.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/11_thumb_G_1448944388914.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/12_P_1448947547989.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/13_P_1448947460386.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/14_P_1448947354031.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/15_P_1448947257324.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/16_P_1448947194687.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/17_P_1448947102246.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/18_P_1448947011435.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/19_P_1448946951581.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/1_P_1449024889889.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/20_P_1448946850602.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/21_P_1448946793276.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/22_P_1448946729629.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/23_P_1448948070348.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/24_P_1448948023823.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/25_P_1448947875346.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/26_P_1448947825754.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/27_P_1448947771805.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/28_P_1448947699948.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/29_P_1448947631994.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/2_20170719161405_249.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/2_20170719161414_628.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/2_20170719161435_381.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/2_P_1448945810202.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/2_P_1448945810814.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/30_P_1448948663450.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/31_P_1448948598947.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/32_P_1448948525620.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/33_P_1448948479966.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/34_P_1448948399009.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/35_P_1448948333610.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/36_P_1448948234405.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/37_P_1448949284365.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/38_P_1448949220255.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/39_P_1448949115481.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/3_P_1448945490837.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/40_P_1448949038702.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/41_P_1448948980358.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/42_P_1448948895193.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/43_P_1448948762645.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/44_P_1448948850187.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/45_P_1448946661303.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/46_P_1448946598711.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/47_P_1448946213263.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/48_P_1448943988970.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/49_P_1448162819889.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/4_P_1448945381985.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/50_P_1448946543091.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/51_P_1448946466595.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/53_P_1495068879687.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/5_P_1448945270390.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/6_P_1448945167279.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/7_P_1448945104883.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/8_P_1448945032810.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/9_P_1448944791617.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/goods/images/生鲜_20170719161424_153.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/message/images/10_P_1448944572085.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/message/images/27_P_1448947771805.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/message/images/27_P_1448947771805_McMxaMJ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/message/images/27_P_1448947771805_bRxhOJZ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/message/images/7_P_1448945104883.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/message/images/7_P_1448945104883_JbUXGpV.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/message/images/sxsp-3_p6QnMEd.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AtguiguShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AtguiguShop/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/goods/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/goods/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/goods/migrations/0002_auto_20180801_0941.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/trade/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/trade/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/trade/migrations/0002_auto_20180801_1200.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user_operation/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_operation/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/adminx.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/adminx.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lg/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lg/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lg/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lg/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -155,8 +45,8 @@
           <entry key="project.open.time.6" value="10" />
           <entry key="project.open.time.7" value="18" />
           <entry key="project.open.time.8" value="12" />
-          <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="50" />
+          <entry key="project.open.time.9" value="5" />
+          <entry key="project.opened" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -175,13 +65,13 @@
         <counts>
           <entry key="py" value="5504" />
           <entry key="py@lg" value="190" />
-          <entry key="txt" value="41" />
+          <entry key="txt" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CommandLine" value="114" />
-          <entry key="PLAIN_TEXT" value="117" />
+          <entry key="PLAIN_TEXT" value="124" />
           <entry key="Python" value="5504" />
         </counts>
       </usages-collector>
@@ -192,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lg/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+            <state relative-caret-position="1530">
+              <caret line="51" column="1" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -210,8 +100,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/goods/views_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+            <state relative-caret-position="330">
+              <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -231,8 +121,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lg/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="26" column="15" lean-forward="true" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+            <state relative-caret-position="570">
+              <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
               <folding>
                 <element signature="e#636#677#0" expanded="true" />
               </folding>
@@ -288,8 +178,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="876" />
-    <option name="y" value="38" />
+    <option name="x" value="218" />
+    <option name="y" value="12" />
     <option name="width" value="1936" />
     <option name="height" value="1100" />
   </component>
@@ -301,7 +191,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -329,6 +218,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -488,14 +378,20 @@
       <option name="project" value="LOCAL" />
       <updated>1533106604403</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="110！！！">
+      <created>1533126320301</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1533126320301</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="876" y="38" width="1936" height="1100" extended-state="0" />
-    <editor active="true" />
+    <frame x="218" y="12" width="1936" height="1100" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15236051" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15450644" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -531,7 +427,8 @@
     <MESSAGE value="1102" />
     <MESSAGE value="gooods and users" />
     <MESSAGE value="所有的app的models的设计" />
-    <option name="LAST_COMMIT_MESSAGE" value="所有的app的models的设计" />
+    <MESSAGE value="110！！！" />
+    <option name="LAST_COMMIT_MESSAGE" value="110！！！" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/.npminstall.done">
@@ -670,8 +567,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lg/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+        <state relative-caret-position="1530">
+          <caret line="51" column="1" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -691,8 +588,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lg/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="26" column="15" lean-forward="true" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+        <state relative-caret-position="570">
+          <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
           <folding>
             <element signature="e#636#677#0" expanded="true" />
           </folding>
@@ -701,8 +598,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/goods/views_base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        <state relative-caret-position="330">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
