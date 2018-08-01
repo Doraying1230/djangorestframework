@@ -7,7 +7,7 @@ class GlobalSettings(object):
     # 网站标题
     site_title = "***商店后台"
     # 网站页面的起始目录
-    site_footer = "oneself"
+    site_footer = "myself 289237642"
 
 
 class VerifyCodeAdmin(object):

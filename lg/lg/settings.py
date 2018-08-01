@@ -19,10 +19,6 @@ sys.path.insert(0, BASE_DIR)
 sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 sys.path.insert(0, os.path.join(BASE_DIR, "extra_apps"))
 
-# print("BASE_DIR==", BASE_DIR)
-# print("sys.path[0]==", sys.path[0])
-# print("sys.path[1]==", sys.path[1])
-# print("sys.path[2]==", sys.path[2])
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -49,9 +45,10 @@ INSTALLED_APPS = [
     'xadmin',
     'crispy_forms',
     'users.apps.UsersConfig',
-    'goods',
-    'trade',
-    'user_operation',
+    'goods.apps.GoodsConfig',
+    'trade.apps.TradeConfig',
+    'user_operation.apps.UserOperationConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -91,7 +88,7 @@ WSGI_APPLICATION = 'lg.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 使用mysql
-        'NAME': 'ligang',  # 数据库名称
+        'NAME': 'lg',  # 数据库名称
         'USER': 'root',  # 连接数据库的账号
         'PASSWORD': 'mysql',  # 连接数据库的密码
         'HOST': '127.0.0.1',  # 或者localhost，主机
@@ -135,3 +132,10 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+# 配置静态资源路径
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+
+# 配置media的url
+MEDIA_URL = "/media/"
+# 加入到环境变量
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
