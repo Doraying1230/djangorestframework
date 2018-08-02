@@ -14,23 +14,37 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-# from django.views.generic import TemplateView
-
 import xadmin
 from lg.settings import MEDIA_ROOT
 from django.views.static import serve
-
-from goods.views_base import GoodsListView
+# from goods.views import GoodsListView
+from goods.views import GoodsListViewSet
 # from rest_framework.documentation import include_docs_urls
 from rest_framework.documentation import include_docs_urls
+from rest_framework.routers import DefaultRouter
+from goods.view_request_response import GoodsListViewRequestResponse
 
-# from django.contrib import admin
+# 实例化默认路由
+router = DefaultRouter()
+
+# 注册商品列表
+router.register(r'goods', GoodsListViewSet)
+# 这种配置很方便，后面就会体现出来
+goods_list = GoodsListViewSet.as_view({
+    # get请求绑定ListModelMixin的list方法
+    'get': 'list',
+})
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^xadmin/', xadmin.site.urls),
     url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
-    url(r'^goods/$', GoodsListView.as_view(), name="goods_list"),
+    # url(r'^goods/$', GoodsListView.as_view(), name="goods_list"),
+    url(r'^goods/$', goods_list, name="goods_list"),
+    url(r'^ueditor/', include('DjangoUeditor.urls')),
+    url(r'^goods_test/$', GoodsListViewRequestResponse.as_view(), name="goods_list_test"),
+
+    url(r'^', include(router.urls)),
 
     # 支持文档生成的url,结尾一定不能写$
     url(r'docs/', include_docs_urls(title="***商店")),

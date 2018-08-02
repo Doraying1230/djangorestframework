@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'trade.apps.TradeConfig',
     'user_operation.apps.UserOperationConfig',
     'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,12 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 MEDIA_URL = "/media/"
 # 加入到环境变量
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# 以后REST_FRAMEWORK的配置都在这里
+REST_FRAMEWORK = {
+    # rest_framework目录下的pagination.py文件PageNumberPagination类
+    # 'DEFAULT_PAGINATION_CLASS': "rest_framework.pagination.PageNumberPagination",
+    # # 每页显示10条数据
+    # 'PAGE_SIZE': 10,
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+}
