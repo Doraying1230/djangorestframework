@@ -19,7 +19,6 @@ from lg.settings import MEDIA_ROOT
 from django.views.static import serve
 # from goods.views import GoodsListView
 from goods.views import GoodsListViewSet
-# from rest_framework.documentation import include_docs_urls
 from rest_framework.documentation import include_docs_urls
 from rest_framework.routers import DefaultRouter
 from goods.view_request_response import GoodsListViewRequestResponse

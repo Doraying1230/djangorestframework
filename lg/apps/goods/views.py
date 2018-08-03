@@ -37,29 +37,44 @@ class GoodsListPagination(PageNumberPagination):
 #     filter_backends = (filters.OrderingFilter, filters.SearchFilter, DjangoFilterBackend)
 #     ordering_fields = ('shop_price', 'add_time')
 
-class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-    queryset = Goods.objects.all()
+# class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+#     queryset = Goods.objects.all()
+#
+#     serializer_class = GoodsSerializer
+#     pagination_class = GoodsListPagination
+#
+#     filter_class = GoodsFilter
+#
+#     filter_backends = (filters.SearchFilter, DjangoFilterBackend)
+#
+#     search_fields = ('^name', 'goods_brief', 'goods_desc')
 
+class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    """
+    返回商品列表
+    """
+    # 得到所有的商品
+    queryset = Goods.objects.all()
+    # 序列化期
     serializer_class = GoodsSerializer
+    # 添加分页配置,settings.py就可以省略了
     pagination_class = GoodsListPagination
+    # filter_backends = (DjangoFilterBackend,)
+    # filter_fields = ('name', 'shop_price')
 
     filter_class = GoodsFilter
 
-    filter_backends = (filters.SearchFilter, DjangoFilterBackend)
-
-    search_fields = ('^name', 'goods_brief', 'goods_desc')
-
 # class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
 #     """
-#     返回商品列表
+#     返回商品列表,自定义序列化器，分页,过滤,搜索，排序
 #     """
-#     # 得到所有的商品
+#     # 支持搜索和过滤，写在一起
 #     queryset = Goods.objects.all()
-#     # 序列化期
+#         # 序列化期
 #     serializer_class = GoodsSerializer
 #     # 添加分页配置,settings.py就可以省略了
 #     pagination_class = GoodsListPagination
 #     # filter_backends = (DjangoFilterBackend,)
 #     # filter_fields = ('name', 'shop_price')
-#
-#     filter_class = GoodsFilter
+#     filter_backends = (filters.OrderingFilter, DjangoFilterBackend)
+#     ordering_fields = ('shop_price', 'add_time')
