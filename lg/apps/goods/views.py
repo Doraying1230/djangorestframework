@@ -1,12 +1,17 @@
 from rest_framework import mixins
 from rest_framework.pagination import PageNumberPagination
-from .models import Goods
-from .serializers import GoodsSerializer
+from .models import Goods, GoodsCategory
+from .serializers import GoodsSerializer, CategorySerializer
 from rest_framework import generics
 from rest_framework import viewsets
 from django_filters.rest_framework import DjangoFilterBackend
 from .filters import GoodsFilter
 from rest_framework import filters
+
+
+class CategoryViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+    queryset = GoodsCategory.objects.filter(category_type=1)
+    serializer_class = CategorySerializer
 
 
 class GoodsListPagination(PageNumberPagination):

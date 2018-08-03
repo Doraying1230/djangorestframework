@@ -24,3 +24,34 @@ class GoodsSerializer(serializers.ModelSerializer):
     sold_num = serializers.IntegerField(default=0)
     # 封面，自动帮我在图片的路径前面加上media
     goods_fron_image = serializers.ImageField(default="")
+
+
+class CategorySerializer3(serializers.ModelSerializer):
+    class Meta:
+        # Model
+        model = GoodsCategory
+        # 把所有的属性都用上的写法
+        fields = "__all__"
+
+
+class CategorySerializer2(serializers.ModelSerializer):
+    # 子目录，在models中related_name="sub_cat"
+    sub_cat = CategorySerializer3(many=True)
+
+    class Meta:
+        # Model
+        model = GoodsCategory
+        # 把所有的属性都用上的写法
+        fields = "__all__"
+
+
+# 商品类别序列化期
+class CategorySerializer(serializers.ModelSerializer):
+    # 子目录，在models中related_name="sub_cat"
+    sub_cat = CategorySerializer2(many=True)
+
+    class Meta:
+        # Model
+        model = GoodsCategory
+        # 把所有的属性都用上的写法
+        fields = "__all__"

@@ -17,8 +17,7 @@ from django.conf.urls import url, include
 import xadmin
 from lg.settings import MEDIA_ROOT
 from django.views.static import serve
-# from goods.views import GoodsListView
-from goods.views import GoodsListViewSet
+from goods.views import GoodsListViewSet, CategoryViewSet
 from rest_framework.documentation import include_docs_urls
 from rest_framework.routers import DefaultRouter
 from goods.view_request_response import GoodsListViewRequestResponse
@@ -28,6 +27,8 @@ router = DefaultRouter()
 
 # 注册商品列表
 router.register(r'goods', GoodsListViewSet)
+# 注册商品类别
+router.register(r'category', CategoryViewSet)
 # 这种配置很方便，后面就会体现出来
 goods_list = GoodsListViewSet.as_view({
     # get请求绑定ListModelMixin的list方法

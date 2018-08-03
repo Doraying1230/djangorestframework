@@ -50,9 +50,11 @@ INSTALLED_APPS = [
     'user_operation.apps.UserOperationConfig',
     'rest_framework',
     'django_filters',
+    'corsheaders',  # 支持跨域请求
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -61,6 +63,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# 允许跨域请求
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'lg.urls'
 
