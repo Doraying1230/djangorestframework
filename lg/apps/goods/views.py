@@ -9,7 +9,7 @@ from .filters import GoodsFilter
 from rest_framework import filters
 
 
-class CategoryViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class CategoryViewSet(mixins.ListModelMixin,mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     queryset = GoodsCategory.objects.filter(category_type=1)
     serializer_class = CategorySerializer
 
@@ -32,7 +32,7 @@ class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     # 得到所有的商品
     queryset = Goods.objects.all()
     serializer_class = GoodsSerializer
-    # pagination_class = GoodsListPagination
+    pagination_class = GoodsListPagination
     filter_class = GoodsFilter
 
     # 支持搜索和过滤，写在一起

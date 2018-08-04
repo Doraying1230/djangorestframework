@@ -54,7 +54,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # 跨域的中间件
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -149,8 +149,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # 以后REST_FRAMEWORK的配置都在这里
 REST_FRAMEWORK = {
     # rest_framework目录下的pagination.py文件PageNumberPagination类
-    'DEFAULT_PAGINATION_CLASS': "rest_framework.pagination.PageNumberPagination",
+    # 'DEFAULT_PAGINATION_CLASS': "rest_framework.pagination.PageNumberPagination",
     # 每页显示10条数据
-    'PAGE_SIZE': 10,
+    # 'PAGE_SIZE': 10,
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
 }
