@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0b7a510-2366-4021-b0ea-7fc9c3bcad24" name="Default" comment="6.4">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b0b7a510-2366-4021-b0ea-7fc9c3bcad24" name="Default" comment="6.4" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +47,9 @@
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="16" />
           <entry key="project.open.time.7" value="37" />
-          <entry key="project.open.time.8" value="20" />
+          <entry key="project.open.time.8" value="21" />
           <entry key="project.open.time.9" value="10" />
-          <entry key="project.opened" value="104" />
+          <entry key="project.opened" value="105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -96,8 +94,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/goods/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="186">
+              <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
                 <marker date="1533350068848" expanded="true" signature="496:602" ph="..." />
@@ -194,6 +192,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -230,7 +229,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -476,9 +474,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33261803" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18240343" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -738,8 +736,8 @@
     <entry file="file://$PROJECT_DIR$/apps/goods/view_request_response.py" />
     <entry file="file://$PROJECT_DIR$/apps/goods/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="186">
+          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
             <marker date="1533350068848" expanded="true" signature="496:602" ph="..." />
