@@ -20,7 +20,7 @@ from django.views.static import serve
 from goods.views import GoodsListViewSet, CategoryViewSet
 from rest_framework.documentation import include_docs_urls
 from rest_framework.routers import DefaultRouter
-from goods.view_request_response import GoodsListViewRequestResponse
+# from goods.view_request_response import GoodsListViewRequestResponse
 
 # 实例化默认路由
 router = DefaultRouter()
@@ -39,10 +39,8 @@ urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^xadmin/', xadmin.site.urls),
     url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
-    # url(r'^goods/$', GoodsListView.as_view(), name="goods_list"),
     url(r'^goods/$', goods_list, name="goods_list"),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
-    url(r'^goods_test/$', GoodsListViewRequestResponse.as_view(), name="goods_list_test"),
 
     url(r'^', include(router.urls)),
 
@@ -50,6 +48,5 @@ urlpatterns = [
     url(r'docs/', include_docs_urls(title="***商店")),
     # 登录时候用的url,调试api的时候用到
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    # url(r'^index/', TemplateView.as_view(template_name='index.html'), name="index"),
 
 ]
