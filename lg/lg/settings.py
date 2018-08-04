@@ -49,8 +49,9 @@ INSTALLED_APPS = [
     'trade.apps.TradeConfig',
     'user_operation.apps.UserOperationConfig',
     'rest_framework',
-    'django_filters',
+    'django_filters',  # 过滤器
     'corsheaders',  # 支持跨域请求
+    'rest_framework.authtoken',  # TokenAuthentication认证的配置
 ]
 
 MIDDLEWARE = [
@@ -152,5 +153,26 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PAGINATION_CLASS': "rest_framework.pagination.PageNumberPagination",
     # 每页显示10条数据
     # 'PAGE_SIZE': 10,
-    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+    # 'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    )
+}
+
+# 配置用户登录后台验证
+AUTHENTICATION_BACKENDS = (
+    'users.views.CustomModelBackend',
+)
+
+import datetime
+
+JWT_AUTH = {
+    # 设置过期日期
+    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
+    # 设置认证前缀
+    'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }

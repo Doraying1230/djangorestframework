@@ -7,6 +7,8 @@ from rest_framework import viewsets
 from django_filters.rest_framework import DjangoFilterBackend
 from .filters import GoodsFilter
 from rest_framework import filters
+from rest_framework.authentication import TokenAuthentication
+
 
 
 class CategoryViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
@@ -43,3 +45,5 @@ class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     search_fields = ('name', 'goods_brief', 'goods_desc')
     # 搜索字段
     ordering_fields = ('shop_price', 'sold_num')
+
+    authentication_classes = (TokenAuthentication,)
