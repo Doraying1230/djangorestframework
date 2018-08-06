@@ -176,3 +176,6 @@ JWT_AUTH = {
     # 设置认证前缀
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }
+
+# 手机号码的正则表达式
+REGEX_MOBILE = "^1[345678]\d{9}$"

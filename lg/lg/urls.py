@@ -22,6 +22,7 @@ from rest_framework.documentation import include_docs_urls
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
 from rest_framework_jwt.views import obtain_jwt_token
+from users.views import SMSCodeViewSet
 
 # 实例化默认路由
 router = DefaultRouter()
@@ -30,6 +31,8 @@ router = DefaultRouter()
 router.register(r'goods', GoodsListViewSet)
 # 注册商品类别
 router.register(r'category', CategoryViewSet)
+# 短信注册
+router.register(r'codes', SMSCodeViewSet)
 # 这种配置很方便，后面就会体现出来
 goods_list = GoodsListViewSet.as_view({
     # get请求绑定ListModelMixin的list方法
