@@ -51,6 +51,15 @@ class UserRegSerializer(serializers.ModelSerializer):
     }, help_text="验证码")
     username = serializers.CharField(required=True, allow_blank=False,
                                      validators=[UniqueValidator(queryset=User.objects.all(), message="用户名不能重复")])
+    password = serializers.CharField(label="密码", style={"input_type": "password"}, write_only=True)
+
+    # 自定义保存加密密码
+    def create(self, validated_data):
+        user = super(UserRegSerializer, self).create(validated_data=validated_data)
+
+        user.set_password(validated_data)
+        user.save()
+        return user
 
     def validate(self, attrs):
         attrs["mobile"] = attrs["username"]
@@ -74,4 +83,4 @@ class UserRegSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ("username", "code", "mobile")
+        fields = ("username", "code", "mobile", "password")
