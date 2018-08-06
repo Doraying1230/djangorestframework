@@ -32,9 +32,10 @@ router.register(r'goods', GoodsListViewSet)
 # 注册商品类别
 router.register(r'category', CategoryViewSet)
 # 短信注册
-router.register(r'codes', SMSCodeViewSet, base_name="codes")
+router.register(r'code', SMSCodeViewSet, base_name="code")
 # 用户手机注册,要加上base_name否则报错
-router.register(r'register', UserRegViewset, base_name="register")
+# router.register(r'register', UserRegViewset, base_name="register")
+router.register(r'users', UserRegViewset, base_name="users")
 # 这种配置很方便，后面就会体现出来
 goods_list = GoodsListViewSet.as_view({
     # get请求绑定ListModelMixin的list方法

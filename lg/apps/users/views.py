@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from users.models import VerifyCode
 from users.serializers import MSMSerializer, UserRegSerializer
 from utils.yunpian import YunPian
+from rest_framework_jwt.utils import jwt_encode_handler, jwt_payload_handler
 import random
 
 # 得到当前用户实例对象
@@ -19,6 +20,23 @@ class UserRegViewset(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = User.objects.all()
     # 配置注册序列化器
     serializer_class = UserRegSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        user = self.perform_create(serializer)
+        # 本质就是自动
+        re_dict = serializer.data
+        # 封装字典
+        payload = jwt_payload_handler(user)
+        re_dict["token"] = jwt_encode_handler(payload)
+        re_dict["name"] = user.name if user.name else user.username
+        headers = self.get_success_headers(serializer.data)
+        return Response(re_dict, status=status.HTTP_201_CREATED, headers=headers)
+
+    def perform_create(self, serializer):
+        return  serializer.save()
 
 
 class CustomModelBackend(ModelBackend):
