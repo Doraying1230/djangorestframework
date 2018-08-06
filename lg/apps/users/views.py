@@ -5,7 +5,7 @@ from rest_framework import viewsets, mixins
 from rest_framework.response import Response
 
 from users.models import VerifyCode
-from users.serializers import MSMSerializer
+from users.serializers import MSMSerializer, UserRegSerializer
 from utils.yunpian import YunPian
 import random
 
@@ -13,7 +13,13 @@ import random
 User = get_user_model()
 
 
-# Create your views here.
+# 用户使用短信注册
+class UserRegViewset(mixins.CreateModelMixin, viewsets.GenericViewSet):
+    # 用户
+    queryset = User.objects.all()
+    # 配置注册序列化器
+    serializer_class = UserRegSerializer
+
 
 class CustomModelBackend(ModelBackend):
 

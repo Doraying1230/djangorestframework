@@ -5,6 +5,7 @@ from rest_framework import serializers
 from lg.settings import REGEX_MOBILE
 from .models import VerifyCode
 from django.contrib.auth import get_user_model
+from rest_framework.validators import UniqueValidator
 
 # 得到用户
 User = get_user_model()
@@ -39,3 +40,38 @@ class MSMSerializer(serializers.Serializer):
 
         # 如果验证通过返回手机号码
         return mobile
+
+
+class UserRegSerializer(serializers.ModelSerializer):
+    code = serializers.CharField(required=True, write_only=True, max_length=4, min_length=4, error_messages={
+        "blank": "请输入验证码",
+        "required": "请输入验证码",
+        "max_length": "请输入正确的验证码",
+        "min_length": "请输入正确的验证码",
+    }, help_text="验证码")
+    username = serializers.CharField(required=True, allow_blank=False,
+                                     validators=[UniqueValidator(queryset=User.objects.all(), message="用户名不能重复")])
+
+    def validate(self, attrs):
+        attrs["mobile"] = attrs["username"]
+        del attrs["code"]
+        return attrs
+
+    def validate_code(self, code):
+        """验证码"""
+        verify_codes = VerifyCode.objects.filter(mobile=self.initial_data["username"]).order_by("-add_time")
+
+        if verify_codes:
+            last_record = verify_codes[0]
+            five_mintes_ago = datetime.now() - timedelta(hours=0, minutes=5, seconds=0)
+            if last_record.add_time < five_mintes_ago:
+                raise serializers.ValidationError("验证码过期了")
+
+            if last_record.code != code:
+                raise serializers.ValidationError("验证码错误")
+        else:
+            raise serializers.ValidationError("验证码错误")
+
+    class Meta:
+        model = User
+        fields = ("username", "code", "mobile")
