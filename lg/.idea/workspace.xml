@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0b7a510-2366-4021-b0ea-7fc9c3bcad24" name="Default" comment="8.1">
+    <list default="true" id="b0b7a510-2366-4021-b0ea-7fc9c3bcad24" name="Default" comment="8.2">
+      <change afterPath="$PROJECT_DIR$/apps/user_operation/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/goods/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/goods/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user_operation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_operation/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lg/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lg/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +66,7 @@
           <entry key="html" value="2" />
           <entry key="js" value="1" />
           <entry key="md" value="3" />
-          <entry key="py" value="117" />
+          <entry key="py" value="124" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
@@ -74,23 +76,23 @@
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="117" />
+          <entry key="Python" value="124" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="md" value="13" />
-          <entry key="py" value="10572" />
+          <entry key="py" value="10963" />
           <entry key="py@lg" value="431" />
-          <entry key="txt" value="81" />
+          <entry key="txt" value="82" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CommandLine" value="141" />
           <entry key="Markdown" value="13" />
-          <entry key="PLAIN_TEXT" value="371" />
-          <entry key="Python" value="10572" />
+          <entry key="PLAIN_TEXT" value="372" />
+          <entry key="Python" value="10963" />
         </counts>
       </usages-collector>
     </session>
@@ -98,99 +100,39 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/users/views.py">
+        <entry file="file://$PROJECT_DIR$/apps/user_operation/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="330">
+              <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
               <folding>
-                <element signature="e#0#69#0" expanded="true" />
+                <element signature="e#0#50#0" expanded="true" />
+                <marker date="1533550008939" expanded="true" signature="273:278" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/goods/views.py">
+        <entry file="file://$PROJECT_DIR$/lg/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="420">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
               <folding>
-                <element signature="e#0#33#0" expanded="true" />
-                <marker date="1533542958581" expanded="false" signature="558:664" ph="..." />
+                <element signature="e#636#677#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lg/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/goods/filters.py">
+        <entry file="file://$PROJECT_DIR$/apps/user_operation/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/goods/serializers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+            <state relative-caret-position="450">
+              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#146#214#0" />
-                <element signature="e#722#829#0" />
-                <element signature="e#892#1086#0" />
-                <element signature="e#1159#1353#0" />
-                <marker date="1533543396917" expanded="true" signature="150:224" ph="..." />
+                <marker date="1533554975474" expanded="true" signature="188:193" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/users/signals.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <marker date="1533544533814" expanded="true" signature="301:427" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/goods/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
-              <folding>
-                <element signature="e#173#1372#0" />
-                <element signature="e#1419#2242#0" />
-                <element signature="e#2281#3911#0" />
-                <element signature="e#3950#4432#0" />
-                <element signature="e#4467#4954#0" />
-                <element signature="e#4990#5376#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/goods/adminx.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -236,12 +178,14 @@
         <option value="$PROJECT_DIR$/apps/utils/yunpian.py" />
         <option value="$PROJECT_DIR$/apps/users/serializers.py" />
         <option value="$PROJECT_DIR$/apps/users/apps.py" />
-        <option value="$PROJECT_DIR$/lg/urls.py" />
         <option value="$PROJECT_DIR$/apps/goods/views.py" />
         <option value="$PROJECT_DIR$/apps/goods/serializers.py" />
         <option value="$PROJECT_DIR$/apps/users/signals.py" />
         <option value="$PROJECT_DIR$/apps/users/views.py" />
         <option value="$PROJECT_DIR$/apps/goods/filters.py" />
+        <option value="$PROJECT_DIR$/apps/user_operation/views.py" />
+        <option value="$PROJECT_DIR$/lg/urls.py" />
+        <option value="$PROJECT_DIR$/apps/user_operation/serializers.py" />
       </list>
     </option>
   </component>
@@ -251,9 +195,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="599" />
-    <option name="y" value="6" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="991" />
+    <option name="y" value="103" />
     <option name="width" value="1936" />
     <option name="height" value="1100" />
   </component>
@@ -281,12 +225,16 @@
               <item name="lg" type="b2602c69:ProjectViewProjectNode" />
               <item name="lg" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="goods" type="462c0819:PsiDirectoryNode" />
+              <item name="user_operation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lg" type="b2602c69:ProjectViewProjectNode" />
               <item name="lg" type="462c0819:PsiDirectoryNode" />
               <item name="lg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
           <select />
@@ -591,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1533547444279</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="8.2">
+      <created>1533548784388</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1533548784388</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -604,16 +559,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="839" y="149" width="1936" height="1100" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14055794" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17918456" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32901135" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946353" visible="true" weight="0.2954023" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946353" visible="true" weight="0.26695842" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.46781608" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32988507" />
@@ -658,7 +613,8 @@
     <MESSAGE value="7.8" />
     <MESSAGE value="7.9" />
     <MESSAGE value="8.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="8.1" />
+    <MESSAGE value="8.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="8.2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/.npminstall.done" />
@@ -815,13 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Envs/tom/Lib/site-packages/django/core/paginator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="111" selection-start-line="111" selection-end-line="111" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Envs/tom/Lib/site-packages/rest_framework/authentication.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -850,16 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lg/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="37" column="49" lean-forward="true" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
-          <folding>
-            <element signature="e#636#677#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/utils/yunpian.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -884,13 +823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Envs/tom/Lib/site-packages/rest_framework/generics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -971,8 +903,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/goods/filters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="409">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/user_operation/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+            <marker date="1533550008939" expanded="true" signature="273:278" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lg/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#636#677#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/tom/Lib/site-packages/django/core/paginator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="111" selection-start-line="111" selection-end-line="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Envs/tom/Lib/site-packages/rest_framework/generics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="167" column="11" lean-forward="true" selection-start-line="167" selection-start-column="11" selection-end-line="167" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/user_operation/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+            <marker date="1533554975474" expanded="true" signature="188:193" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
