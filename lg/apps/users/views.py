@@ -28,15 +28,14 @@ class UserRegViewset(mixins.CreateModelMixin, viewsets.GenericViewSet):
         user = self.perform_create(serializer)
         # 本质就是自动
         re_dict = serializer.data
-        # 封装字典
-        payload = jwt_payload_handler(user)
-        re_dict["token"] = jwt_encode_handler(payload)
+        # 从服务器那拿到token，把所有的页面的菜单都展示出来
         re_dict["name"] = user.name if user.name else user.username
+        re_dict["token"] = jwt_encode_handler(jwt_payload_handler(user))
         headers = self.get_success_headers(serializer.data)
         return Response(re_dict, status=status.HTTP_201_CREATED, headers=headers)
 
     def perform_create(self, serializer):
-        return  serializer.save()
+        return serializer.save()
 
 
 class CustomModelBackend(ModelBackend):

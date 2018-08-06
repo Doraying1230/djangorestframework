@@ -26,7 +26,7 @@ class GoodsListPagination(PageNumberPagination):
 
 
 # GenericViewSet
-class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+class GoodsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin,viewsets.GenericViewSet):
     """
     返回商品列表,自定义序列化器，分页,过滤,搜索，排序
     """
@@ -35,6 +35,8 @@ class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     serializer_class = GoodsSerializer
     pagination_class = GoodsListPagination
     filter_class = GoodsFilter
+
+    authentication_classes = (TokenAuthentication,)
 
     # 支持搜索和过滤，写在一起
     filter_backends = (filters.OrderingFilter, filters.SearchFilter, DjangoFilterBackend)
@@ -45,4 +47,3 @@ class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     # 搜索字段
     ordering_fields = ('shop_price', 'sold_num')
 
-    authentication_classes = (TokenAuthentication,)
