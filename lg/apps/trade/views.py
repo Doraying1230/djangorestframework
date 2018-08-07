@@ -5,11 +5,11 @@ from rest_framework.authentication import SessionAuthentication
 
 from trade.models import ShopingCart
 from utils.permissions import IsOwnerOrReadOnly
-from .serializers import ShopingCartSerializer
+from .serializers import ShopingCartSerializer, ShopingCartDetailSerializer
 
 
 class ShopingCartViewSet(viewsets.ModelViewSet):
-    serializer_class = ShopingCartSerializer
+    # serializer_class = ShopingCartSerializer
     permission_classes = (IsAuthenticated, IsOwnerOrReadOnly,)
     # JWT认证
     authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication)
@@ -19,3 +19,9 @@ class ShopingCartViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return ShopingCart.objects.filter(user=self.request.user)
+
+    def get_serializer_class(self):
+        if self.action == "list":
+            return ShopingCartDetailSerializer
+        else:
+            return ShopingCartSerializer

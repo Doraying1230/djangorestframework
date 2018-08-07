@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0b7a510-2366-4021-b0ea-7fc9c3bcad24" name="Default" comment="9.7">
-      <change afterPath="$PROJECT_DIR$/apps/trade/serializers.py" afterDir="false" />
+    <list default="true" id="b0b7a510-2366-4021-b0ea-7fc9c3bcad24" name="Default" comment="10.1/10.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/trade/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/trade/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/trade/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/trade/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lg/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lg/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,46 +82,47 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="md" value="13" />
-          <entry key="py" value="13273" />
+          <entry key="py" value="13396" />
           <entry key="py@lg" value="431" />
-          <entry key="txt" value="101" />
+          <entry key="txt" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CommandLine" value="141" />
           <entry key="Markdown" value="13" />
-          <entry key="PLAIN_TEXT" value="391" />
-          <entry key="Python" value="13273" />
+          <entry key="PLAIN_TEXT" value="400" />
+          <entry key="Python" value="13396" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/trade/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="165">
+              <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1533639366361" expanded="true" signature="411:797" ph="..." />
+                <marker date="1533640886233" expanded="true" signature="440:1001" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/trade/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="300">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <marker date="1533639842939" expanded="true" signature="132:137" ph="..." />
-                <marker date="1533639842939" expanded="true" signature="132:221" ph="..." />
-                <marker date="1533639842939" expanded="true" signature="536:637" ph="..." />
+                <marker date="1533641552360" expanded="true" signature="198:313" ph="..." />
+                <marker date="1533641552360" expanded="false" signature="365:370" ph="..." />
+                <marker date="1533641552360" expanded="true" signature="365:454" ph="..." />
+                <marker date="1533641552360" expanded="true" signature="769:870" ph="..." />
               </folding>
             </state>
           </provider>
@@ -216,8 +216,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="624" />
-    <option name="y" value="461" />
+    <option name="x" value="195" />
+    <option name="y" value="464" />
     <option name="width" value="1936" />
     <option name="height" value="823" />
   </component>
@@ -615,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1533631911629</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="10.1/10.2">
+      <created>1533639931277</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1533639931277</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -628,7 +635,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="624" y="461" width="1936" height="823" extended-state="0" />
+    <frame x="195" y="464" width="1936" height="823" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1389485" />
@@ -662,7 +669,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="gooods and users" />
     <MESSAGE value="所有的app的models的设计" />
     <MESSAGE value="110！！！" />
     <MESSAGE value="110!!!" />
@@ -687,7 +693,8 @@
     <MESSAGE value="9.4/9.5" />
     <MESSAGE value="9.6" />
     <MESSAGE value="9.7" />
-    <option name="LAST_COMMIT_MESSAGE" value="9.7" />
+    <MESSAGE value="10.1/10.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="10.1/10.2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/.tx/config">
@@ -1034,26 +1041,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/trade/serializers.py">
+    <entry file="file://$PROJECT_DIR$/apps/trade/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="165">
+          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <marker date="1533639842939" expanded="true" signature="132:137" ph="..." />
-            <marker date="1533639842939" expanded="true" signature="132:221" ph="..." />
-            <marker date="1533639842939" expanded="true" signature="536:637" ph="..." />
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1533640886233" expanded="true" signature="440:1001" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/trade/views.py">
+    <entry file="file://$PROJECT_DIR$/apps/trade/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="300">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1533639366361" expanded="true" signature="411:797" ph="..." />
+            <element signature="e#0#38#0" expanded="true" />
+            <marker date="1533641552360" expanded="true" signature="198:313" ph="..." />
+            <marker date="1533641552360" expanded="false" signature="365:370" ph="..." />
+            <marker date="1533641552360" expanded="true" signature="365:454" ph="..." />
+            <marker date="1533641552360" expanded="true" signature="769:870" ph="..." />
           </folding>
         </state>
       </provider>
