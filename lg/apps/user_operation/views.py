@@ -8,7 +8,7 @@ from utils.permissions import IsOwnerOrReadOnly
 from rest_framework.authentication import SessionAuthentication
 
 
-class UserFavViewSet(mixins.CreateModelMixin, mixins.DestroyModelMixin, mixins.ListModelMixin, GenericViewSet):
+class UserFavViewSet(mixins.RetrieveModelMixin,mixins.CreateModelMixin, mixins.DestroyModelMixin, mixins.ListModelMixin, GenericViewSet):
     """用户收藏"""
     # 用户列表
     queryset = UserFav.objects.all()
@@ -17,10 +17,10 @@ class UserFavViewSet(mixins.CreateModelMixin, mixins.DestroyModelMixin, mixins.L
     # 配置权限校验，检验是否登录
     permission_classes = (IsAuthenticated, IsOwnerOrReadOnly,)
     # JWT
-    authentication_classes = (JSONWebTokenAuthentication,SessionAuthentication)
+    authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication)
+    # 收藏的时候，收藏的id修改成商品的id
     lookup_field = "goods_id"
 
     # 得到收藏的时候，只能让其得到当前用户的所有收藏，而不能得到其他用户的收藏
     def get_queryset(self):
-        return UserFav.objects.filter(user=self.request.user)
-
+        return self.queryset.filter(user=self.request.user)

@@ -66,5 +66,4 @@ xadmin.site.register(GoodsCategory, GoodsCategoryAdmin)
 xadmin.site.register(GoodsCategoryBrand, GoodsCategoryBrandAdmin)
 xadmin.site.register(GoodsImage, GoodsImageAdmin)
 xadmin.site.register(Banner, BannerAdmin)
-
 xadmin.site.register(IndexAd, IndexAdAdmin)

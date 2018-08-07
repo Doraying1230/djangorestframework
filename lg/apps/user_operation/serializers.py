@@ -9,11 +9,11 @@ class UserFavViewSerializer(serializers.ModelSerializer):
     user = serializers.HiddenField(default=serializers.CurrentUserDefault())
 
     class Meta:
-        validators=[
-            UniqueTogetherValidator(
-                queryset=UserFav.objects.all(),
-                fields=('user','goods')
-            )
-        ]
+        # validators=[
+        #     UniqueTogetherValidator(
+        #         queryset=UserFav.objects.all(),
+        #         fields=('user','goods')
+        #     )
+        # ]
         model = UserFav
         fields = ("user", "goods", "id")
