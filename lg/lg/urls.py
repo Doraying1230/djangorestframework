@@ -24,7 +24,9 @@ from rest_framework.authtoken import views
 from rest_framework_jwt.views import obtain_jwt_token
 from users.views import SMSCodeViewSet, UserViewset
 from user_operation.views import UserFavViewSet, LeavingMessageViewSet, UserAddressViewSet
-from trade.views import ShopingCartViewSet
+from trade.views import ShopingCartViewSet, OrderViewSet
+
+# from trade.views import OrderViewSet, ShopingCartViewSet
 
 # 实例化默认路由
 router = DefaultRouter()
@@ -44,8 +46,10 @@ router.register(r'userfavs', UserFavViewSet, base_name="userfavs")
 router.register(r'messages', LeavingMessageViewSet, base_name="messages")
 # 收获地址
 router.register(r'address', UserAddressViewSet, base_name="address")
-# 交易
+# 购物车
 router.register(r'shopcarts', ShopingCartViewSet, base_name="shopcarts")
+# 订单
+router.register(r'orders', OrderViewSet, base_name="orders")
 # 这种配置很方便，后面就会体现出来
 goods_list = GoodsListViewSet.as_view({
     # get请求绑定ListModelMixin的list方法

@@ -1,6 +1,68 @@
 from rest_framework import serializers
 from goods.serializers import GoodsSerializer
-from .models import Goods, ShopingCart
+from .models import Goods, ShopingCart, OrderInfo, OrderGoods
+
+
+# class OrderSerializer(serializers.ModelSerializer):
+#     """订单序列化器"""
+#
+#     # 得到当前用户,在fields里面填写
+#     user = serializers.HiddenField(
+#         default=serializers.CurrentUserDefault()
+#     )
+#
+#     # 自定义生成订单号信息
+#     def generate_order_sn(self):
+#         import time
+#         from random import randint
+#         # "当前时间+userid+随机数"
+#         order_sn = "{time_str}{userid}{randstr}".format(time_str=time.strftime("%Y%m%d%H%M%S"),
+#                                                         userid=self.context["request"].user, randstr=randint(10, 99))
+#         return order_sn
+#
+#     def validate(self, attrs):
+#         # 添加订单
+#         attrs["order_sn"] = self.generate_order_sn()
+#         return attrs
+#
+#     class Meta:
+#         model = OrderInfo
+#         fields = "__all__"
+
+
+# 自己写的有问题
+class OrderSerializer(serializers.ModelSerializer):
+    """订单序列化器"""
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
+    # 订单号不让前端编写
+    order_sn = serializers.CharField(read_only=True)
+    # 交易号不让前端编写
+    trade_sn = serializers.CharField(read_only=True)
+    # 支付状态
+    pay_status = serializers.CharField(read_only=True)
+    # 支付时间
+    pay_time = serializers.DateTimeField(read_only=True)
+    # 添加时间
+    add_time = serializers.DateTimeField(read_only=True)
+
+    # 自定义生成订单号信息
+    def generate_order_sn(self):
+        import time
+        from random import randint
+        # "当前时间+userid+随机数"
+        order_sn = "{time_str}{userid}{randstr}".format(time_str=time.strftime("%Y%m%d%H%M%S"),
+                                                        userid=self.context["request"].user, randstr=randint(10, 99))
+        return order_sn
+
+    def validate(self, attrs):
+        """取消订单"""
+        attrs["order_sn"] = self.generate_order_sn()
+        return attrs
+
+    class Meta:
+        model = OrderInfo
+        fields = "__all__"
 
 
 class ShopingCartDetailSerializer(serializers.ModelSerializer):
