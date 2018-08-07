@@ -1,7 +1,16 @@
 from rest_framework import serializers
 from rest_framework.validators import UniqueTogetherValidator
 from goods.serializers import GoodsSerializer
-from .models import UserFav, UserLeavingMessage
+from .models import UserFav, UserLeavingMessage, UserAddress
+
+
+class UserAddressSerializers(serializers.ModelSerializer):
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+    add_time = serializers.DateTimeField(read_only=True, format='%Y-%m-%d %H:%M')
+
+    class Meta:
+        model = UserAddress
+        fields = ("id", "user", "province", "city", "district", "address", "signer_name", "signer_mobile", "add_time")
 
 
 class UserFavViewSerializer(serializers.ModelSerializer):

@@ -1,11 +1,25 @@
-from rest_framework.viewsets import GenericViewSet
+from rest_framework.viewsets import GenericViewSet, ModelViewSet
 from rest_framework import mixins
-from .models import UserFav, UserLeavingMessage
-from .serializers import UserFavViewSerializer, UserFavDetailSerializer, LeavingMessageSerializers
+from .models import UserFav, UserLeavingMessage, UserAddress
+from .serializers import UserFavViewSerializer, UserFavDetailSerializer, LeavingMessageSerializers, \
+    UserAddressSerializers
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from utils.permissions import IsOwnerOrReadOnly
 from rest_framework.authentication import SessionAuthentication
+
+
+class UserAddressViewSet(ModelViewSet):
+    """收获地址"""
+    serializer_class = UserAddressSerializers
+    # 这个时候删除某个地址的时候就会验证是否是对应用户的地址--IsOwnerOrReadOnly
+    permission_classes = (IsAuthenticated, IsOwnerOrReadOnly,)
+    # JWT认证
+    authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication)
+
+    def get_queryset(self):
+        """ 返回当前登录用户的信息"""
+        return UserAddress.objects.filter(user=self.request.user)
 
 
 class LeavingMessageViewSet(mixins.DestroyModelMixin, mixins.ListModelMixin, mixins.CreateModelMixin, GenericViewSet):
