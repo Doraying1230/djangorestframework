@@ -16,7 +16,7 @@ User = get_user_model()
 
 
 # 用户使用短信注册
-class UserViewset(mixins.CreateModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class UserViewset(mixins.UpdateModelMixin, mixins.CreateModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     # 用户
     queryset = User.objects.all()
 
