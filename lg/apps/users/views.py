@@ -3,9 +3,10 @@ from django.db.models import Q
 from rest_framework import status
 from rest_framework import viewsets, mixins
 from rest_framework.response import Response
-
+from rest_framework import permissions, authentication
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from users.models import VerifyCode
-from users.serializers import MSMSerializer, UserRegSerializer
+from users.serializers import MSMSerializer, UserRegSerializer, UserDetailSerializer
 from utils.yunpian import YunPian
 from rest_framework_jwt.utils import jwt_encode_handler, jwt_payload_handler
 import random
@@ -15,18 +16,26 @@ User = get_user_model()
 
 
 # 用户使用短信注册
-class UserRegViewset(mixins.CreateModelMixin, viewsets.GenericViewSet):
+class UserViewset(mixins.CreateModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     # 用户
     queryset = User.objects.all()
+
     # 配置注册序列化器
-    serializer_class = UserRegSerializer
+    # serializer_class = UserRegSerializer
+    def get_serializer_class(self):
+        """根据不同的动作，返回不同的序列化器"""
+        if self.action == "retrieve":  # 请求得到某个用户
+            return UserDetailSerializer
+        elif self.action == "create":  # 注册
+            return UserRegSerializer
+        return UserDetailSerializer  # 默认返回UserDetailSerializer
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
         user = self.perform_create(serializer)
-        # 本质就是自动
+        # 本质就是字典
         re_dict = serializer.data
         # 从服务器那拿到token，把所有的页面的菜单都展示出来
         re_dict["name"] = user.name if user.name else user.username
@@ -36,6 +45,22 @@ class UserRegViewset(mixins.CreateModelMixin, viewsets.GenericViewSet):
 
     def perform_create(self, serializer):
         return serializer.save()
+
+    def get_object(self):
+        return self.request.user
+
+    # 认证
+    authentication_classes = (authentication.SessionAuthentication, JSONWebTokenAuthentication)
+
+    # 根据不同的操作动态获取不同的权限需求
+    def get_permissions(self):
+        """根据不同的操作动态获取不同的权限需求"""
+
+        if self.action == "retrieve":  # 请求得到某个用户
+            return [permissions.IsAuthenticated()]
+        elif self.action == "create":  # 注册
+            return []
+        return []  # 默认返回空
 
 
 class CustomModelBackend(ModelBackend):

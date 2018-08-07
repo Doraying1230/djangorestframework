@@ -11,10 +11,20 @@ from rest_framework.validators import UniqueValidator
 User = get_user_model()
 
 
+# 得到用户的时候用的序列化器
+class UserDetailSerializer(serializers.ModelSerializer):
+    """用户序列化器"""
+
+    class Meta:
+        model = User
+        # 要验证的字段
+        fields = ("name", "birthday", "gender", "email", "mobile")
+
+
 # 短信序列化器
 class MSMSerializer(serializers.Serializer):
     # 手机号码
-    mobile = serializers.CharField(max_length=11)
+    mobile = serializers.CharField(max_length=11, help_text="手机号码")
 
     def validate_mobile(self, mobile):
         """
