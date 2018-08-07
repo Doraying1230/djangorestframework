@@ -42,7 +42,7 @@ class UserLeavingMessage(models.Model):
     # 留言类型
     msg_type = models.IntegerField(default=1, choices=MSG_TYPE, verbose_name="留言类型", help_text="留言类型")
     # 留言内容
-    mssage = models.CharField(max_length=500, verbose_name="留言内容")
+    message = models.CharField(max_length=500, verbose_name="留言内容")
     # 上传的文件
     file = models.FileField(upload_to="message/images/", verbose_name="上传的文件", help_text="上传的文件")
     # 添加时间

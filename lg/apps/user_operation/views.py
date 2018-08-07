@@ -1,11 +1,24 @@
 from rest_framework.viewsets import GenericViewSet
 from rest_framework import mixins
-from .models import UserFav
-from .serializers import UserFavViewSerializer,UserFavDetailSerializer
+from .models import UserFav, UserLeavingMessage
+from .serializers import UserFavViewSerializer, UserFavDetailSerializer, LeavingMessageSerializers
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from utils.permissions import IsOwnerOrReadOnly
 from rest_framework.authentication import SessionAuthentication
+
+
+class LeavingMessageViewSet(mixins.DestroyModelMixin, mixins.ListModelMixin, mixins.CreateModelMixin, GenericViewSet):
+    """用户留言"""
+    serializer_class = LeavingMessageSerializers
+    # 这个时候删除某个留言的时候就会验证是否是对应用户的留言--IsOwnerOrReadOnly
+    permission_classes = (IsAuthenticated, IsOwnerOrReadOnly)
+    # JWT认证
+    authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication)
+
+    def get_queryset(self):
+        """返回当前登录用户的信息"""
+        return UserLeavingMessage.objects.filter(user=self.request.user)
 
 
 class UserFavViewSet(mixins.RetrieveModelMixin, mixins.CreateModelMixin, mixins.DestroyModelMixin,
