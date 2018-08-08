@@ -5,7 +5,7 @@ from rest_framework.authentication import SessionAuthentication
 from rest_framework import mixins
 from trade.models import ShopingCart, OrderInfo, OrderGoods
 from utils.permissions import IsOwnerOrReadOnly
-from .serializers import ShopingCartSerializer, ShopingCartDetailSerializer, OrderSerializer
+from .serializers import ShopingCartSerializer, ShopingCartDetailSerializer, OrderSerializer, OrderDetailSerializer
 
 
 class OrderViewSet(mixins.RetrieveModelMixin, mixins.CreateModelMixin, mixins.ListModelMixin, mixins.DestroyModelMixin,
@@ -21,8 +21,15 @@ class OrderViewSet(mixins.RetrieveModelMixin, mixins.CreateModelMixin, mixins.Li
     permission_classes = (IsAuthenticated, IsOwnerOrReadOnly,)
     # JWT认证
     authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication)
+
     # 序列化器
-    serializer_class = OrderSerializer
+    # serializer_class = OrderSerializer
+
+    def get_serializer_class(self):
+        if self.action == "retrieve":
+            return OrderDetailSerializer
+        else:
+            return OrderSerializer
 
     def get_queryset(self):
         # 过滤得到当前用户的订单列表

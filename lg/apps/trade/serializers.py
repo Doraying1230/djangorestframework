@@ -3,34 +3,21 @@ from goods.serializers import GoodsSerializer
 from .models import Goods, ShopingCart, OrderInfo, OrderGoods
 
 
-# class OrderSerializer(serializers.ModelSerializer):
-#     """订单序列化器"""
-#
-#     # 得到当前用户,在fields里面填写
-#     user = serializers.HiddenField(
-#         default=serializers.CurrentUserDefault()
-#     )
-#
-#     # 自定义生成订单号信息
-#     def generate_order_sn(self):
-#         import time
-#         from random import randint
-#         # "当前时间+userid+随机数"
-#         order_sn = "{time_str}{userid}{randstr}".format(time_str=time.strftime("%Y%m%d%H%M%S"),
-#                                                         userid=self.context["request"].user, randstr=randint(10, 99))
-#         return order_sn
-#
-#     def validate(self, attrs):
-#         # 添加订单
-#         attrs["order_sn"] = self.generate_order_sn()
-#         return attrs
-#
-#     class Meta:
-#         model = OrderInfo
-#         fields = "__all__"
+# 一个订单对应多个商品，商品再把商品的详细信息列出
+class OrderGoodsSerialzier(serializers.ModelSerializer):
+    goods = OrderGoods
+    fields = "__all__"
 
 
-# 自己写的有问题
+# 用的时候使用OrderSerializer和OrderDetailSerializer，
+class OrderDetailSerializer(serializers.ModelSerializer):
+    goods = OrderGoodsSerialzier(many=True)
+
+    class Meta:
+        model = OrderInfo
+        fields = "__all__"
+
+
 class OrderSerializer(serializers.ModelSerializer):
     """订单序列化器"""
     user = serializers.HiddenField(default=serializers.CurrentUserDefault())
