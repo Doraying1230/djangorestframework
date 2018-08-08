@@ -5,8 +5,11 @@ from .models import Goods, ShopingCart, OrderInfo, OrderGoods
 
 # 一个订单对应多个商品，商品再把商品的详细信息列出
 class OrderGoodsSerialzier(serializers.ModelSerializer):
-    goods = OrderGoods
-    fields = "__all__"
+    goods = GoodsSerializer(many=False)
+
+    class Meta:
+        model = OrderGoods
+        fields = "__all__"
 
 
 # 用的时候使用OrderSerializer和OrderDetailSerializer，
