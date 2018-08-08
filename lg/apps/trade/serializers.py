@@ -16,6 +16,34 @@ class OrderGoodsSerialzier(serializers.ModelSerializer):
 class OrderDetailSerializer(serializers.ModelSerializer):
     goods = OrderGoodsSerialzier(many=True)
 
+    # 支付宝url
+    alipay_url = serializers.SerializerMethodField(read_only=True)
+
+    def get_alipay_url(self, obj):
+        from lg.settings import private_key_path, ali_public_path
+        from utils.alipay import AliPay
+        alipay = AliPay(
+            appid="2016091800542258",
+            # 异步的通知接口，当在浏览器扫描创建订单后，这个时候关闭页面，此时可以在客户端或者支护宝账号里面看到这个为支付完成的信息
+            app_notify_url="http://127.0.0.1:8000/alipay/ruturn/",
+            app_private_key_path=private_key_path,
+            alipay_public_key_path=ali_public_path,  # 支付宝的公钥，验证支付宝回传消息使用，不是你自己的公钥,
+            debug=True,  # 默认False,
+            # 同步接口，支付成功后会跳转的接口
+            return_url="http://127.0.0.1:8000/alipay/ruturn/"
+        )
+        url = alipay.direct_pay(
+            subject=obj.order_sn,
+            # 商品id
+            out_trade_no=obj.order_sn,
+            # 资金
+            total_amount=obj.order_mount
+        )
+        # 沙箱环境
+        re_url = "https://openapi.alipaydev.com/gateway.do?{data}".format(data=url)
+        print(re_url)
+        return re_url
+
     class Meta:
         model = OrderInfo
         fields = "__all__"

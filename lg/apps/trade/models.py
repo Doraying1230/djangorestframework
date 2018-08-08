@@ -32,7 +32,7 @@ class OrderInfo(models.Model):
     """订单"""
     ORDER_STATUS = (
         ("PAYING", "待支付"),
-        ("TRADE_SUCESS", "支付成功"),
+        ("TRADE_SUCCESS", "支付成功"),
         ("TRADE_CLOSE", "支付关闭"),
         ("TRADE_FAIL", "支付失败"),
         ("TRADE_FINSHED", "交易结束"),
@@ -42,7 +42,7 @@ class OrderInfo(models.Model):
     # 订单号
     order_sn = models.CharField(null=True, blank=True, max_length=30, unique=True, verbose_name="订单号")
     # 交易编号
-    trade_sn = models.CharField(max_length=100, unique=True, blank=True, null=True, verbose_name="交易号")
+    trade_no = models.CharField(max_length=100, unique=True, blank=True, null=True, verbose_name="交易号")
     # 支付状态
     pay_status = models.CharField(default="PAYING", null=True, blank=True, max_length=30, choices=ORDER_STATUS,
                                   verbose_name="订单状态")

@@ -179,3 +179,8 @@ JWT_AUTH = {
 
 # 手机号码的正则表达式
 REGEX_MOBILE = "^1[345678]\d{9}$"
+# 支付宝相关配置
+# 应用私钥
+private_key_path = os.path.join(BASE_DIR, "apps/trade/keys/private_2048.txt")
+# 支付宝公钥
+ali_public_path = os.path.join(BASE_DIR, "apps/trade/keys/alipay_key_2048.txt")

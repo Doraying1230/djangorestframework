@@ -24,9 +24,8 @@ from rest_framework.authtoken import views
 from rest_framework_jwt.views import obtain_jwt_token
 from users.views import SMSCodeViewSet, UserViewset
 from user_operation.views import UserFavViewSet, LeavingMessageViewSet, UserAddressViewSet
-from trade.views import ShopingCartViewSet, OrderViewSet
-
-# from trade.views import OrderViewSet, ShopingCartViewSet
+from trade.views import ShopingCartViewSet, OrderViewSet, AlipayView
+from django.views.generic import TemplateView
 
 # 实例化默认路由
 router = DefaultRouter()
@@ -60,6 +59,8 @@ urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
     url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
     url(r'^goods/$', goods_list, name="goods_list"),
+    # 支付宝支付
+    url(r'^alipay/ruturn/', AlipayView.as_view(), name="alipay"),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
 
     url(r'^', include(router.urls)),
@@ -72,5 +73,7 @@ urlpatterns = [
     url(r'^api-token-auth/', views.obtain_auth_token),
     # jwt的认证,修改一个名字
     url(r'^login/', obtain_jwt_token),
+    # 前后端代码链接到一块
+    url(r'^index/', TemplateView.as_view(template_name='index.html'), name="index"),
 
 ]
