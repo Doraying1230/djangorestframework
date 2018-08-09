@@ -1,13 +1,20 @@
 from rest_framework import mixins
 from rest_framework.pagination import PageNumberPagination
-from .models import Goods, GoodsCategory
-from .serializers import GoodsSerializer, CategorySerializer
+from .models import Goods, GoodsCategory, Banner
+from .serializers import GoodsSerializer, CategorySerializer, BannerSerializer
 from rest_framework import generics
 from rest_framework import viewsets
 from django_filters.rest_framework import DjangoFilterBackend
 from .filters import GoodsFilter
 from rest_framework import filters
 from rest_framework.authentication import TokenAuthentication
+
+
+class BannerViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    """返回的轮播图列表"""
+    queryset = Banner.objects.all()
+    # 序列化期，这个也是要自定义的
+    serializer_class = BannerSerializer
 
 
 class CategoryViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
@@ -26,7 +33,7 @@ class GoodsListPagination(PageNumberPagination):
 
 
 # GenericViewSet
-class GoodsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin,viewsets.GenericViewSet):
+class GoodsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     """
     返回商品列表,自定义序列化器，分页,过滤,搜索，排序
     """
@@ -46,4 +53,3 @@ class GoodsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin,viewsets
     search_fields = ('name', 'goods_brief', 'goods_desc')
     # 搜索字段
     ordering_fields = ('shop_price', 'sold_num')
-
