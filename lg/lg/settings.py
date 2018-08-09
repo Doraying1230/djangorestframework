@@ -155,6 +155,20 @@ REST_FRAMEWORK = {
     # 'PAGE_SIZE': 10,
     # 'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
 
+    'DEFAULT_THROTTLE_CLASSES': (
+        # 用户未登录，根据ip地址判断
+        'rest_framework.throttling.AnonRateThrottle',
+        # 用户登录，通过token判断也就是Session判断,用户登录后也要限制
+        'rest_framework.throttling.UserRateThrottle'
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        # 具体设置多少，根据网站的运营情况
+        # 'anon': '100/day',
+        # 'user': '1000/day',
+        'anon': '2/minute',
+        'user': '3/minute'
+    },
+
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
@@ -184,3 +198,19 @@ REGEX_MOBILE = "^1[345678]\d{9}$"
 private_key_path = os.path.join(BASE_DIR, "apps/trade/keys/private_2048.txt")
 # 支付宝公钥
 ali_public_path = os.path.join(BASE_DIR, "apps/trade/keys/alipay_key_2048.txt")
+
+# 配置drf-extensions缓存超时
+REST_FRAMEWORK_EXTENSIONS = {
+    'DEFAULT_CACHE_RESPONSE_TIMEOUT': 15 * 60
+}
+
+# django-redis缓存配置
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/2",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}

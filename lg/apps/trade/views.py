@@ -37,6 +37,7 @@ class AlipayView(views.APIView):
         )
         verify_result = alipay.verify(processed_dict, sign)
         if verify_result:
+
             # 该交易在支付宝系统中的交易流水号
             trade_no = processed_dict.get("trade_no")
             # 商户网站唯一订单号
@@ -121,6 +122,41 @@ class OrderViewSet(mixins.RetrieveModelMixin, mixins.CreateModelMixin, mixins.Li
 
 
 class ShopingCartViewSet(viewsets.ModelViewSet):
+
+    # 当添加商品到购物车的时候库存数减少
+    def perform_create(self, serializer):
+        shop_cart = serializer.save()
+        goods = shop_cart.goods
+        # 商品的库存减少
+        goods.goods_num -= shop_cart.nums
+        goods.save()
+
+    # 当重购物车删除要购买的商品的时候库存增加（不购买了）
+    def perform_destroy(self, instance):
+        print(instance)
+        goods = instance.goods
+        # 商品库存增加
+        goods.goods_num += instance.nums
+        goods.save()
+        instance.delete()
+
+    # 使用保存后的库存数减掉保存前的库存数，-=它们的差值
+    def perform_update(self, serializer):
+        # 得到保存前的库存数
+        old_shop_cart = ShopingCart.objects.get(id=serializer.instance.id)
+        # 当前购物车的商品数量
+        pre_goods_num = old_shop_cart.nums
+        # 保存之后的库存数
+        new_shop_cart=serializer.save()
+        new_goods_num=new_shop_cart.nums
+
+        # 差值
+        nums=new_goods_num-pre_goods_num
+        # 得到购物车里面对应的商品类
+        goods = old_shop_cart.goods
+        goods.goods_num -= nums
+        goods.save()
+
     # serializer_class = ShopingCartSerializer
     permission_classes = (IsAuthenticated, IsOwnerOrReadOnly,)
     # JWT认证

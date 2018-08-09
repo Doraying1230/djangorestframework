@@ -1,5 +1,6 @@
 from rest_framework import mixins
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.response import Response
 from .models import Goods, GoodsCategory, Banner
 from .serializers import GoodsSerializer, CategorySerializer, BannerSerializer, IndexCategorySerializer
 from rest_framework import generics
@@ -8,12 +9,14 @@ from django_filters.rest_framework import DjangoFilterBackend
 from .filters import GoodsFilter
 from rest_framework import filters
 from rest_framework.authentication import TokenAuthentication
+from rest_framework_extensions.cache.mixins import CacheResponseMixin
+from rest_framework.throttling import AnonRateThrottle, UserRateThrottle
 
 
-class IndexCategoryViewset(mixins.ListModelMixin,viewsets.GenericViewSet):
+class IndexCategoryViewset(mixins.ListModelMixin, viewsets.GenericViewSet):
     """首页商品分类数据"""
     # 取出的是，咱们取出导航栏的两列数据，并且类别名称为生鲜食品和酒水饮料的数据
-    queryset = GoodsCategory.objects.filter(is_tab=True,name__in=["生鲜食品", "酒水饮料"])
+    queryset = GoodsCategory.objects.filter(is_tab=True, name__in=["生鲜食品", "酒水饮料"])
     serializer_class = IndexCategorySerializer
 
 
@@ -40,10 +43,21 @@ class GoodsListPagination(PageNumberPagination):
 
 
 # GenericViewSet
-class GoodsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class GoodsListViewSet(CacheResponseMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     """
     返回商品列表,自定义序列化器，分页,过滤,搜索，排序
     """
+
+    # 添加对这个接口的限速率
+    throttle_classes = (AnonRateThrottle, UserRateThrottle)
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        instance.click_num += 1
+        instance.save()
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
+
     # 得到所有的商品
     queryset = Goods.objects.all()
     serializer_class = GoodsSerializer
