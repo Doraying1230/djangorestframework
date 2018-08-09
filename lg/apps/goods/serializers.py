@@ -1,10 +1,34 @@
 from rest_framework import serializers
-from .models import Goods, GoodsCategory, GoodsImage, Banner
+from .models import Goods, GoodsCategory, GoodsImage, Banner, GoodsCategoryBrand
+from django.db.models import Q
 
 
 class BannerSerializer(serializers.ModelSerializer):
+    """品牌序列化器"""
+
     class Meta:
         model = Banner
+        fields = "__all__"
+
+
+class IndexCategorySerializer(serializers.ModelSerializer):
+    """首页商品序列化器"""
+    # 类型和品牌是一对多关系
+    brands = BannerSerializer
+
+    goods = serializers.SerializerMethodField()
+
+    def get_goods(self, obj):
+        # 得到实实在在的商品数据
+        all_goods = Goods.objects.filter(Q(category_id=obj.id) | Q(category__parent_category_id=obj.id) | Q(
+            category__parent_category__parent_category_id=obj.id))
+        # 传入数据，并且商品类型和商品是以一对多的关系所以many=True
+        goods_serializer = GoodsSerializer(all_goods, many=True,context={'request':self.context['request']})
+        # 返回数据，本质是交给goods
+        return goods_serializer.data
+
+    class Meta:
+        model = GoodsCategory
         fields = "__all__"
 
 

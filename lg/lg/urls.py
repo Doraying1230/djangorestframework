@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 import xadmin
 from lg.settings import MEDIA_ROOT
 from django.views.static import serve
-from goods.views import GoodsListViewSet, CategoryViewSet, BannerViewSet
+from goods.views import GoodsListViewSet, CategoryViewSet, BannerViewSet, IndexCategoryViewset
 from rest_framework.documentation import include_docs_urls
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
@@ -51,6 +51,8 @@ router.register(r'shopcarts', ShopingCartViewSet, base_name="shopcarts")
 router.register(r'orders', OrderViewSet, base_name="orders")
 # 轮播图
 router.register(r'banners', BannerViewSet, base_name="banners")
+# 商品分类
+router.register(r'indexgoods', IndexCategoryViewset, base_name="indexgoods")
 # 这种配置很方便，后面就会体现出来
 goods_list = GoodsListViewSet.as_view({
     # get请求绑定ListModelMixin的list方法
