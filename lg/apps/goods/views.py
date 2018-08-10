@@ -49,7 +49,7 @@ class GoodsListViewSet(CacheResponseMixin, mixins.ListModelMixin, mixins.Retriev
     """
 
     # 添加对这个接口的限速率
-    throttle_classes = (AnonRateThrottle, UserRateThrottle)
+    # throttle_classes = (AnonRateThrottle, UserRateThrottle)
 
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()

@@ -28,7 +28,7 @@ SECRET_KEY = 'pgw1j$wc9l#v2ghoyh^gne8gbz)z^q2bykbp7hu2q_yd#fs5vf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # 替换系统的用户
 AUTH_USER_MODEL = "users.UserProfile"
@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'django_filters',  # 过滤器
     'corsheaders',  # 支持跨域请求
     'rest_framework.authtoken',  # TokenAuthentication认证的配置
+    'social_django',  # 微博第三方登录
+    'raven.contrib.django.raven_compat',  # 手机错误日志的库
 ]
 
 MIDDLEWARE = [
@@ -82,6 +84,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 第三方登录
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -99,6 +104,7 @@ DATABASES = {
         'USER': 'root',  # 连接数据库的账号
         'PASSWORD': 'mysql',  # 连接数据库的密码
         'HOST': '127.0.0.1',  # 或者localhost，主机
+        # 'HOST':'192.168.77.128 ',
         'PORT': 3306,  # 端口
 
     }
@@ -155,19 +161,19 @@ REST_FRAMEWORK = {
     # 'PAGE_SIZE': 10,
     # 'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
 
-    'DEFAULT_THROTTLE_CLASSES': (
-        # 用户未登录，根据ip地址判断
-        'rest_framework.throttling.AnonRateThrottle',
-        # 用户登录，通过token判断也就是Session判断,用户登录后也要限制
-        'rest_framework.throttling.UserRateThrottle'
-    ),
-    'DEFAULT_THROTTLE_RATES': {
-        # 具体设置多少，根据网站的运营情况
-        # 'anon': '100/day',
-        # 'user': '1000/day',
-        'anon': '2/minute',
-        'user': '3/minute'
-    },
+    # 'DEFAULT_THROTTLE_CLASSES': (
+    #     # 用户未登录，根据ip地址判断
+    #     'rest_framework.throttling.AnonRateThrottle',
+    #     # 用户登录，通过token判断也就是Session判断,用户登录后也要限制
+    #     'rest_framework.throttling.UserRateThrottle'
+    # ),
+    # 'DEFAULT_THROTTLE_RATES': {
+    #     # 具体设置多少，根据网站的运营情况
+    #     # 'anon': '100/day',
+    #     # 'user': '1000/day',
+    #     'anon': '2/minute',
+    #     'user': '3/minute'
+    # },
 
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
@@ -213,4 +219,9 @@ CACHES = {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     }
+}
+
+# 配置sentry发送错误日志到服务器上
+RAVEN_CONFIG = {
+    'dsn': 'http://d15887e30b5b484ebf73ca30f6b61c5e:bad3446ce56e42a2b30fd959ef5b94c2@118.190.202.67:9000/3',
 }

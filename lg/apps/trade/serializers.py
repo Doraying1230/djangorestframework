@@ -25,12 +25,12 @@ class OrderDetailSerializer(serializers.ModelSerializer):
         alipay = AliPay(
             appid="2016091800542258",
             # 异步的通知接口，当在浏览器扫描创建订单后，这个时候关闭页面，此时可以在客户端或者支护宝账号里面看到这个为支付完成的信息
-            app_notify_url="http://127.0.0.1:8000/alipay/ruturn/",
+            app_notify_url="http://192.168.77.128:8000/alipay/ruturn/",
             app_private_key_path=private_key_path,
             alipay_public_key_path=ali_public_path,  # 支付宝的公钥，验证支付宝回传消息使用，不是你自己的公钥,
             debug=True,  # 默认False,
             # 同步接口，支付成功后会跳转的接口
-            return_url="http://127.0.0.1:8000/alipay/ruturn/"
+            return_url="http://192.168.77.128:8000/alipay/ruturn/"
         )
         url = alipay.direct_pay(
             subject=obj.order_sn,
