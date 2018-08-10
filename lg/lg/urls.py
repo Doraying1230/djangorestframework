@@ -76,11 +76,12 @@ urlpatterns = [
     # token认证
     url(r'^api-token-auth/', views.obtain_auth_token),
     # jwt的认证,修改一个名字
-    url(r'^login/', obtain_jwt_token),
+    url(r'^login/$', obtain_jwt_token),
     # 前后端代码链接到一块
     url(r'^index/', TemplateView.as_view(template_name='index.html'), name="index"),
     # 第三方登录
-    url(r'^login/$', obtain_jwt_token),
+    # url(r'^login/$', obtain_jwt_token),
     url('', include('social_django.urls', namespace='social')),
+
 
 ]

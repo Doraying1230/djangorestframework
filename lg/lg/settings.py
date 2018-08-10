@@ -182,11 +182,24 @@ REST_FRAMEWORK = {
         # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
     )
 }
-
+# 配置用户登录后台验证
+# AUTHENTICATION_BACKENDS = (
+#     'users.views.CustomModelBackend',
+# )
 # 配置用户登录后台验证
 AUTHENTICATION_BACKENDS = (
     'users.views.CustomModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.weibo.WeiboOAuth2',  # 微博登陆认证
+    # 'social_core.backends.qq.QQOAuth2',  # QQ登录认证
+    # 'social_core.backends.weixin.WeixinOAuth2',  # 微信登录认证
 )
+
+# 微博
+SOCIAL_AUTH_WEIBO_KEY = '766303709'
+SOCIAL_AUTH_WEIBO_SECRET = 'a5dd2411328c23df34a1bc4d22b99524'
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/index/'
 
 import datetime
 

@@ -33,7 +33,6 @@ class UserViewset(mixins.UpdateModelMixin, mixins.CreateModelMixin, mixins.Retri
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-
         user = self.perform_create(serializer)
         # 本质就是字典
         re_dict = serializer.data

@@ -10,7 +10,6 @@ from .serializers import ShopingCartSerializer, ShopingCartDetailSerializer, Ord
 from rest_framework import views
 from lg.settings import private_key_path, ali_public_path
 from datetime import datetime
-from rest_framework.response import Response
 from django.shortcuts import redirect
 
 
@@ -190,6 +189,14 @@ class OrderViewSet(mixins.RetrieveModelMixin, mixins.CreateModelMixin, mixins.Li
 
             # 把该条信息在购车中删除--订单提交后，清空购物车
             shop_cart.delete()
+
+    # 订单取消
+    def perform_destroy(self, instance):
+        print(instance)
+        goods = instance.goods
+        goods.goods_num += instance.nums
+        goods.save()
+        instance.delete()
 
 
 class ShopingCartViewSet(viewsets.ModelViewSet):
