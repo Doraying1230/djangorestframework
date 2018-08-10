@@ -65,6 +65,12 @@ class UserFavViewSet(mixins.RetrieveModelMixin, mixins.CreateModelMixin, mixins.
         goods.fav_num += 1
         goods.save()
 
+    def perform_destroy(self, instance):
+        userfav = instance
+        goods = userfav.goods
+        goods.fav_num -= 1
+        goods.save()
+
     # 得到收藏的时候，只能让其得到当前用户的所有收藏，而不能得到其他用户的收藏
     def get_queryset(self):
         return self.queryset.filter(user=self.request.user)
