@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.views import View
 from .form import UserRegisterForm, UserLoginForm
-from .models import UserProfile
+from .models import UserProfile, Banner
 from django.contrib.auth import authenticate, logout, login
 
 
@@ -42,7 +42,8 @@ class IndexView(View):
     """HomePage"""
 
     def get(self, request):
-        return render(request, 'index.html')
+        all_banner = Banner.objects.all()[:3]
+        return render(request, 'index.html', {"all_banner": all_banner})
 
 
 class UserRegisterView(View):

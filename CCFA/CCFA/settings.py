@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UserConfig',
+    'particular.apps.ParticularConfig',
     'DjangoUeditor',
     'xadmin',
     'crispy_forms',
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -129,8 +131,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 # 配置media的url
-MEDIA_URL = "/media/"
-# 加入到环境变量
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+MEDIA_URL = '/static/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 # 指定用户
 AUTH_USER_MODEL = 'users.UserProfile'
