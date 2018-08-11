@@ -51,8 +51,8 @@
             <div class="checkbox">
                 <label><input type="checkbox" value="remember-me"> 记住我</label>
                 <br>
-                <label>忘记密码</label>
-                <label style="float:right"><a href="user_register.html">我要注册</a></label>
+
+                <label style="float:right"><a href="{% url 'users:user_register' %}">我要注册</a></label>
             </div>
             <input class="btn btn-lg btn-success btn-block" type="submit" value="登录">
     </form>

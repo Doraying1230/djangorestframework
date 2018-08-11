@@ -21,9 +21,9 @@ class EmailVerifyXadmin(object):
 
 
 class BannerXadmin(object):
-    list_display = ['image', 'url', 'add_time']
-    search_fields = ['image', 'url']
-    list_filter = ['image', 'url', 'add_time']
+    list_display = ['image', 'add_time']
+    search_fields = ['image']
+    list_filter = ['image', 'add_time']
 
 
 xadmin.site.register(EmailVerify, EmailVerifyXadmin)
