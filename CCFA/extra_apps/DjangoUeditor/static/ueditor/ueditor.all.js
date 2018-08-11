@@ -13855,7 +13855,7 @@ UE.plugins['pagebreak'] = function () {
     me.addInputRule(function(root){
         root.traversal(function(node){
             if(node.type == 'text' && node.data == me.options.pageBreakTag){
-                var hr = UE.uNode.createElement('<hr class="pagebreak" noshade="noshade" size="5" style="-webkit-user-select: none;">');
+                var hr = UE.uNode.createElement('<hr class="pagebreak" noshade="noshade" size="5" style="-webkit-users-select: none;">');
                 node.parentNode.insertBefore(hr,node);
                 node.parentNode.removeChild(node)
             }

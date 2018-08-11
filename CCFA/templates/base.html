@@ -221,20 +221,20 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html" style="font-size:32px;">尚筹网-创意产品众筹平台</a>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse" style="float:right;">
-
-                    {% if request.user.is_authenticated %}
-                        <ul class="nav navbar-nav navbar-right">
+                {% block operating %}
+                    <div id="navbar" class="navbar-collapse collapse" style="float:right;">
+                        {% if request.user.is_authenticated %}
+                            <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="#">{{ request.user.username }}</a>
+                                <a href="#">登录</a>
                             </li>
                             <li>
-                                <a href="{% url 'users:user_logout' %}">退出</a>
+                                <a href="#">退出</a>
                             </li>
                         </ul>
 
-                    {% else %}
-                        <ul class="nav navbar-nav navbar-right">
+                        {% else %}
+                              <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="#">登录</a>
                             </li>
@@ -242,8 +242,9 @@
                                 <a href="{% url 'users:user_register' %}">注册</a>
                             </li>
                         </ul>
-                    {% endif %}
-                </div>
+                        {% endif %}
+                    </div>
+                {% endblock %}
             </div>
         </nav>
 

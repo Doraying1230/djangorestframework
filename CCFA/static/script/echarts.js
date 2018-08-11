@@ -1087,7 +1087,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        else if (opt.flush !== false && env.browser.weChat) {
 	            // In WeChat embeded browser, `requestAnimationFrame` and `setInterval`
 	            // hang when sliding page (on touch event), which cause that zr does not
-	            // refresh util user interaction finished, which is not expected.
+	            // refresh util users interaction finished, which is not expected.
 	            // But `dispatchAction` may be called too frequently when pan on touch
 	            // screen, which impacts performance if do not throttle them.
 	            this._throttledZrFlush();
@@ -2922,7 +2922,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     */
 	    function filterBySubType(components, condition) {
 	        // Using hasOwnProperty for restrict. Consider
-	        // subType is undefined in user payload.
+	        // subType is undefined in users payload.
 	        return condition.hasOwnProperty('subType')
 	            ? filter(components, function (cpt) {
 	                return cpt.subType === condition.subType;
@@ -2996,7 +2996,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     *     Plain object, Array, TypedArray, number, string, null, undefined.
 	     * Those data types will be assgined using the orginal data:
 	     *     BUILTIN_OBJECT
-	     * Instance of user defined class will be cloned to a plain object, without
+	     * Instance of users defined class will be cloned to a plain object, without
 	     * properties in prototype.
 	     * Other data types is not supported (not sure what will happen).
 	     *
@@ -3487,7 +3487,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // used in this case: `var someVal = map.set('a', genVal());`
 	            return value;
 	        },
-	        // Although util.each can be performed on this hashMap directly, user
+	        // Although util.each can be performed on this hashMap directly, users
 	        // should not use the exposed keys, who are prefixed.
 	        each: function (cb, context) {
 	            context !== void 0 && (cb = bind(cb, context));
@@ -3871,7 +3871,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     */
 	    modelUtil.makeIdAndName = function (mapResult) {
 	        // We use this id to hash component models and view instances
-	        // in echarts. id can be specified by user, or auto generated.
+	        // in echarts. id can be specified by users, or auto generated.
 
 	        // The id generation rule ensures new view instance are able
 	        // to mapped to old instance when setOption are called in
@@ -4946,7 +4946,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @param  {number} [options.maxIterations=3]
 	     * @param  {number} [options.minChar=0] If truncate result are less
 	     *                  then minChar, ellipsis will not show, which is
-	     *                  better for user hint in some cases.
+	     *                  better for users hint in some cases.
 	     * @param  {number} [options.placeholder=''] When all truncated, use the placeholder.
 	     * @return {string}
 	     */
@@ -7144,7 +7144,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            });
 	            each(names, function (name) {
 	                // Consider case: newOption.width is null, which is
-	                // set by user for removing width setting.
+	                // set by users for removing width setting.
 	                hasProp(newOption, name) && (newParams[name] = merged[name] = newOption[name]);
 	                hasValue(newParams, name) && newValueCount++;
 	                hasValue(merged, name) && mergedValueCount++;
@@ -7169,7 +7169,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                return merged;
 	            }
 	            // Case: newOption: {width: ..., right: ...},
-	            // Than we can make sure user only want those two, and ignore
+	            // Than we can make sure users only want those two, and ignore
 	            // all origin params in targetOption.
 	            else if (newValueCount >= enoughParamNumber) {
 	                return newParams;
@@ -7819,9 +7819,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Consider case:
 	     * `chart.setOption(opt1);`
-	     * Then user do some interaction like dataZoom, dataView changing.
+	     * Then users do some interaction like dataZoom, dataView changing.
 	     * `chart.setOption(opt2);`
-	     * Then user press 'reset button' in toolbox.
+	     * Then users press 'reset button' in toolbox.
 	     *
 	     * After doing that all of the interaction effects should be reset, the
 	     * chart should be the same as the result of invoke
@@ -20274,7 +20274,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // by listening to `mouseover` to add "hover style" and listening to `mouseout`
 	            // to remove "hover style" on an element, without any additional code for
 	            // compatibility. (`mouseout` will not be triggered in `touchend`, so "hover
-	            // style" will remain for user view)
+	            // style" will remain for users view)
 
 	            // click event should always be triggered no matter whether
 	            // there is gestrue event. System click can not be prevented.
@@ -24220,7 +24220,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return dimensions;
 	    }
 
-	    // The rule should not be complex, otherwise user might not
+	    // The rule should not be complex, otherwise users might not
 	    // be able to known where the data is wrong.
 	    var guessOrdinal = completeDimensions.guessOrdinal = function (data, dimIndex) {
 	        for (var i = 0, len = data.length; i < len; i++) {
@@ -24883,7 +24883,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    axisHelper.getAxisRawValue = function (axis, value) {
 	        // In category axis with data zoom, tick is not the original
-	        // index of axis.data. So tick should not be exposed to user
+	        // index of axis.data. So tick should not be exposed to users
 	        // in category axis.
 	        return axis.type === 'category' ? axis.scale.getLabel(value) : value;
 	    };
@@ -25225,8 +25225,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	         */
 	        setInterval: function (interval) {
 	            this._interval = interval;
-	            // Dropped auto calculated niceExtent and use user setted extent
-	            // We assume user wan't to set both interval, min, max to get a better result
+	            // Dropped auto calculated niceExtent and use users setted extent
+	            // We assume users wan't to set both interval, min, max to get a better result
 	            this._niceExtent = this._extent.slice();
 	        },
 
@@ -29130,7 +29130,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        nameGap: 15,
 
 	        silent: false, // Default false to support tooltip.
-	        triggerEvent: false, // Default false to avoid legacy user event listener fail.
+	        triggerEvent: false, // Default false to avoid legacy users event listener fail.
 
 	        tooltip: {
 	            show: false
@@ -29814,11 +29814,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	                        fill: typeof textColor === 'function'
 	                            ? textColor(
 	                                // (1) In category axis with data zoom, tick is not the original
-	                                // index of axis.data. So tick should not be exposed to user
+	                                // index of axis.data. So tick should not be exposed to users
 	                                // in category axis.
 	                                // (2) Compatible with previous version, which always returns labelStr.
 	                                // But in interval scale labelStr is like '223,445', which maked
-	                                // user repalce ','. So we modify it to return original val but remain
+	                                // users repalce ','. So we modify it to return original val but remain
 	                                // it as 'string' to avoid error in replacing.
 	                                axis.type === 'category' ? labelStr : axis.type === 'value' ? tickVal + '' : tickVal,
 	                                index
@@ -30070,7 +30070,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    function fixMinMaxLabelShow(axisModel, textEls) {
-	        // If min or max are user set, we need to check
+	        // If min or max are users set, we need to check
 	        // If the tick on min(max) are overlap on their neighbour tick
 	        // If they are overlapped, we need to hide the min(max) tick label
 	        var showMinLabel = axisModel.get('axisLabel.showMinLabel');
@@ -30324,7 +30324,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            result.coordSysMap[coordSysKey] = coordSys;
 
 	            // Set tooltip (like 'cross') is a convienent way to show axisPointer
-	            // for user. So we enable seting tooltip on coordSys model.
+	            // for users. So we enable seting tooltip on coordSys model.
 	            var coordSysModel = coordSys.model;
 	            var baseTooltipModel = coordSysModel.getModel('tooltip', globalTooltipModel);
 
@@ -35589,7 +35589,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var itemStyle = model.getItemStyle();
 	        var areaColor = model.get('areaColor');
 
-	        // If user want the color not to be changed when hover,
+	        // If users want the color not to be changed when hover,
 	        // they should both set areaColor and color to be null.
 	        if (areaColor != null) {
 	            itemStyle.fill = areaColor;
@@ -36837,7 +36837,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // input id at the first time.
 	            // This feature can make sure that each data item and its
 	            // mapped color have the same index between data list and
-	            // color list at the beginning, which is useful for user
+	            // color list at the beginning, which is useful for users
 	            // to adjust data-color mapping.
 
 	            /**
@@ -37943,7 +37943,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	                        if (!parent.__tmWillDelete) {
 	                            // Let node animate to right-bottom corner, cooperating with fadeout,
-	                            // which is appropriate for user understanding.
+	                            // which is appropriate for users understanding.
 	                            // Divided by 2 for reRoot rolling up effect.
 	                            targetX = parent.__tmNodeWidth / 2;
 	                            targetY = parent.__tmNodeHeight / 2;
@@ -38434,7 +38434,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            graphic.setText(style, labelModel, visualColor);
 
 	            // text.align and text.baseline is not included by graphic.setText,
-	            // because in most cases the two attributes are not exposed to user,
+	            // because in most cases the two attributes are not exposed to users,
 	            // except in treemap.
 	            style.textAlign = labelTextStyleModel.get('align');
 	            style.textVerticalAlign = labelTextStyleModel.get('baseline');
@@ -38508,7 +38508,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    : {x: parentOldX, y: parentOldY, width: 0, height: 0};
 	            }
 
-	            // Fade in, user can be aware that these nodes are new.
+	            // Fade in, users can be aware that these nodes are new.
 	            lastCfg.fadein = storageName !== 'nodeGroup';
 	        }
 	    }
@@ -41791,7 +41791,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	            label.attr({
 	                style: {
-	                    // Use the user specified text align and baseline first
+	                    // Use the users specified text align and baseline first
 	                    textVerticalAlign: label.__verticalAlign || textVerticalAlign,
 	                    textAlign: label.__textAlign || textAlign
 	                },
@@ -45012,7 +45012,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            axisExpandRate: 17,
 	            axisExpandDebounce: 50,
 	            // [out, in, jumpTarget]. In percentage. If use [null, 0.05], null means full.
-	            // Do not doc to user until necessary.
+	            // Do not doc to users until necessary.
 	            axisExpandSlideTriggerArea: [-0.15, 0.05, 0.4],
 	            axisExpandTriggerOn: 'click', // 'mousemove' or 'click'
 
@@ -46236,8 +46236,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            && thisBrushOption.brushMode === 'single'
 	            && thisBrushOption.removeOnClick
 	        ) {
-	            // Help user to remove covers easily, only by a tiny drag, in 'single' mode.
-	            // But a single click do not clear covers, because user may have casual
+	            // Help users to remove covers easily, only by a tiny drag, in 'single' mode.
+	            // But a single click do not clear covers, because users may have casual
 	            // clicks (for example, click on other component and do not expect covers
 	            // disappear).
 	            // Only some cover removed, trigger action, but not every click trigger action.
@@ -46368,7 +46368,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                var cover = new graphic.Group();
 
 	                // Do not use graphic.Polygon because graphic.Polyline do not close the
-	                // border of the shape when drawing, which is a better experience for user.
+	                // border of the shape when drawing, which is a better experience for users.
 	                cover.add(new graphic.Polyline({
 	                    name: 'main',
 	                    style: makeStyle(brushOption),
@@ -47956,7 +47956,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        /**
 	         * @see <https://en.wikipedia.org/wiki/Box_plot>
-	         * The meanings of 'min' and 'max' depend on user,
+	         * The meanings of 'min' and 'max' depend on users,
 	         * and echarts do not need to know it.
 	         * @readOnly
 	         */
@@ -48039,7 +48039,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         */
 	        getInitialData: function (option, ecModel) {
 	            // When both types of xAxis and yAxis are 'value', layout is
-	            // needed to be specified by user. Otherwise, layout can be
+	            // needed to be specified by users. Otherwise, layout can be
 	            // judged by which axis is category.
 
 	            var categories;
@@ -51158,7 +51158,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var unitLength = Math.max(symbolSize[valueDim.index] + valueLineWidth, 0);
 	        var pathLen = unitLength;
 
-	        // Note: rotation will not effect the layout of symbols, because user may
+	        // Note: rotation will not effect the layout of symbols, because users may
 	        // want symbols to rotate on its center, which should not be translated
 	        // when rotating.
 
@@ -53449,7 +53449,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var status = axisPointerModel.get('status');
 
 	            // Bind them to `this`, not in closure, otherwise they will not
-	            // be replaced when user calling setOption in not merge mode.
+	            // be replaced when users calling setOption in not merge mode.
 	            this._axisModel = axisModel;
 	            this._axisPointerModel = axisPointerModel;
 	            this._api = api;
@@ -54391,7 +54391,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        /**
 	         * @override
-	         * @param  {Object} option  the initial option that user gived
+	         * @param  {Object} option  the initial option that users gived
 	         * @param  {module:echarts/model/Model} ecModel  the model object for themeRiver option
 	         * @return {module:echarts/data/List}
 	         */
@@ -56145,7 +56145,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var tooltipModel = itemModel.getModel('tooltip');
 	            var legendGlobalTooltipModel = tooltipModel.parentModel;
 
-	            // Use user given icon first
+	            // Use users given icon first
 	            legendSymbolType = itemIcon || legendSymbolType;
 	            itemGroup.add(symbolCreator.createSymbol(
 	                legendSymbolType, 0, 0, itemWidth, itemHeight, isSelected ? color : inactiveColor
@@ -56596,7 +56596,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // Try to keep the tooltip show when refreshing
 	            if (this._lastX != null
 	                && this._lastY != null
-	                // When user is willing to control tooltip totally using API,
+	                // When users is willing to control tooltip totally using API,
 	                // self.manuallyShowTip({x, y}) might cause tooltip hide,
 	                // which is not expected.
 	                && tooltipModel.get('triggerOn') !== 'none'
@@ -57092,7 +57092,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        // FIXME
-	        // Should we remove this but leave this to user?
+	        // Should we remove this but leave this to users?
 	        _updateContentNotChangedOnAxis: function (dataByCoordSys) {
 	            var lastCoordSys = this._lastDataByCoordSys;
 	            var contentNotChanged = !!lastCoordSys
@@ -58625,7 +58625,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            viewHelper.buildLabelElOption(elOption, axisModel, axisPointerModel, api, labelPos);
 	        }
 
-	        // Do not support handle, utill any user requires it.
+	        // Do not support handle, utill any users requires it.
 
 	    });
 
@@ -59146,7 +59146,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                selected: []
 	            };
 	            // Every brush component exists in event params, convenient
-	            // for user to find by index.
+	            // for users to find by index.
 	            brushSelected.push(thisBrushSelected);
 
 	            var brushOption = brushModel.option;
@@ -59257,7 +59257,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    dataIndex: []
 	                };
 	                // Every series exists in event params, convenient
-	                // for user to find series by seriesIndex.
+	                // for users to find series by seriesIndex.
 	                thisBrushSelected.selected.push(seriesBrushSelected);
 
 	                var selectorsByBrushType = getSelectorsByBrushType(seriesModel);
@@ -59771,9 +59771,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     *
 	     * [area]:
 	     *
-	     * Generated by BrushController or user input.
+	     * Generated by BrushController or users input.
 	     * {
-	     *     panelId: Used to locate coordInfo directly. If user inpput, no panelId.
+	     *     panelId: Used to locate coordInfo directly. If users inpput, no panelId.
 	     *     brushType: determine how to convert to/from coord('rect' or 'polygon' or 'lineX/Y').
 	     *     Index/Id/Name of geo, xAxis, yAxis, grid: See util/model#parseFinder.
 	     *     range: pixel range.
@@ -60266,7 +60266,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 
 	            // If ranges is null/undefined, range state remain.
-	            // This helps user to dispatchAction({type: 'brush'}) with no areas
+	            // This helps users to dispatchAction({type: 'brush'}) with no areas
 	            // set but just want to get the current brush select info from a `brush` event.
 	            if (!areas) {
 	                return;
@@ -61200,7 +61200,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 
 	        var ignoreSize = zrUtil.map([0, 1], function (hvIdx) {
-	            // If user have set `width` or both `left` and `right`, cellSize
+	            // If users have set `width` or both `left` and `right`, cellSize
 	            // will be automatically set to 'auto', otherwise the default
 	            // setting of cellSize will make `width` setting not work.
 	            if (layout.sizeCalculable(raw, hvIdx)) {
@@ -62014,7 +62014,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                    // 'filter': data items which are out of window will be removed.
 	                                    //           This option is applicable when filtering outliers.
 	                                    // 'empty': data items which are out of window will be set to empty.
-	                                    //          This option is applicable when user should not neglect
+	                                    //          This option is applicable when users should not neglect
 	                                    //          that there are some data items out of window.
 	                                    // Taking line chart as an example, line will be broken in
 	                                    // the filtered points when filterModel is set to 'empty', but
@@ -62171,13 +62171,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	         */
 	        _judgeAutoMode: function () {
 	            // Auto set only works for setOption at the first time.
-	            // The following is user's reponsibility. So using merged
+	            // The following is users's reponsibility. So using merged
 	            // option is OK.
 	            var thisOption = this.option;
 
 	            var hasIndexSpecified = false;
 	            eachAxisDim(function (dimNames) {
-	                // When user set axisIndex as a empty array, we think that user specify axisIndex
+	                // When users set axisIndex as a empty array, we think that users specify axisIndex
 	                // but do not want use auto mode. Because empty array may be encountered when
 	                // some error occured.
 	                if (thisOption[dimNames.axisIndex] != null) {
@@ -62329,7 +62329,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * @private
 	         */
 	        _setDefaultThrottle: function (rawOption) {
-	            // When first time user set throttle, auto throttle ends.
+	            // When first time users set throttle, auto throttle ends.
 	            if (rawOption.hasOwnProperty('throttle')) {
 	                this._autoThrottle = false;
 	            }
@@ -62987,7 +62987,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // time axes are used to compare data of the same date in different years).
 	        // So basically dataZoom just obtains extent by series.data (in category axis
 	        // extent can be obtained from axis.data).
-	        // Nevertheless, user can set min/max/scale on axes to make extent of axes
+	        // Nevertheless, users can set min/max/scale on axes to make extent of axes
 	        // consistent.
 	        fixExtentByAxis(axisProxy, dataExtent);
 
@@ -64252,7 +64252,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    // Only create one roam controller for each coordinate system.
 	    // one roam controller might be refered by two inside data zoom
-	    // components (for example, one for x and one for y). When user
+	    // components (for example, one for x and one for y). When users
 	    // pan or zoom, only dispatch one action for those data zoom
 	    // components.
 
@@ -64473,7 +64473,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 
 	        ecModel.eachComponent('dataZoom', function (dataZoomModel) {
-	            // Fullfill all of the range props so that user
+	            // Fullfill all of the range props so that users
 	            // is able to get them from chart.getOption().
 	            var axisProxy = dataZoomModel.findRepresentativeAxisProxy();
 	            var percentRange = axisProxy.getDataPercentWindow();
@@ -64827,7 +64827,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            if (!range || range.auto) {
 	                // `range` should always be array (so we dont use other
-	                // value like 'auto') for user-friend. (consider getOption).
+	                // value like 'auto') for users-friend. (consider getOption).
 	                dataExtent.auto = 1;
 	                this.option.range = dataExtent;
 	            }
@@ -65368,7 +65368,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                // Originally we use visualMap.color as the default color, but setOption at
 	                // the second time the default color will be erased. So we change to use
 	                // constant DEFAULT_COLOR.
-	                // If user do not want the defualt color, set inRange: {color: null}.
+	                // If users do not want the defualt color, set inRange: {color: null}.
 	                base.inRange = base.inRange || {color: DEFAULT_COLOR};
 
 	                // If using shortcut like: {inRange: 'symbol'}, complete default value.
@@ -66290,7 +66290,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 
 	            // When realtime is set as false, handles, which are in barGroup,
-	            // also trigger hoverLink, which help user to realize where they
+	            // also trigger hoverLink, which help users to realize where they
 	            // focus on when dragging. (see test/heatmap-large.html)
 	            // When realtime is set as true, highlight will not show when hover
 	            // handle, because the label on handle, which displays a exact value
@@ -71518,7 +71518,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                ? {
 	                    brushType: 'auto',
 	                    brushStyle: {
-	                        // FIXME user customized?
+	                        // FIXME users customized?
 	                        lineWidth: 0,
 	                        fill: 'rgba(0,0,0,0.2)'
 	                    }
