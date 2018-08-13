@@ -22452,7 +22452,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return dim;
 	    };
 	    /**
-	     * Get type and stackable info of particular dimension
+	     * Get type and stackable info of items dimension
 	     * @param {string|number} dim
 	     *        Dimension can be concrete names like x, y, z, lng, lat, angle, radius
 	     *        Or a ordinal number. For example getDimensionInfo(0) will return 'x' or 'lng' or 'radius'
@@ -35098,7 +35098,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Transformed to particular position and size
+	         * Transformed to items position and size
 	         * @param {number} x
 	         * @param {number} y
 	         * @param {number} width

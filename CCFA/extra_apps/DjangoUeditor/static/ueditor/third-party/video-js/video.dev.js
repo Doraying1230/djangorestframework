@@ -368,7 +368,7 @@ vjs.off = function(elem, type, fn) {
 vjs.cleanUpEvents = function(elem, type) {
   var data = vjs.getData(elem);
 
-  // Remove the events of a particular type if there are none left
+  // Remove the events of a items type if there are none left
   if (data.handlers[type].length === 0) {
     delete data.handlers[type];
     // data.handlers[type] = null;
@@ -5934,7 +5934,7 @@ vjs.MediaLoader = vjs.Component.extend({
  * Text tracks are tracks of timed text events.
  * Captions - text displayed over the video for the hearing impared
  * Subtitles - text displayed over the video for those who don't understand langauge in the video
- * Chapters - text displayed in a menu allowing the users to jump to particular points (chapters) in the video
+ * Chapters - text displayed in a menu allowing the users to jump to items points (chapters) in the video
  * Descriptions (not supported yet) - audio descriptions that are read back to the users by a screen reading device
  */
 
