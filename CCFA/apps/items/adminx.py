@@ -1,5 +1,5 @@
 import xadmin
-from .models import ProjectInfo,ImageInfo
+from .models import ProjectInfo, ImageInfo
 
 
 class ProjectInfoXadmin(object):
@@ -13,8 +13,10 @@ class ProjectInfoXadmin(object):
 
 
 class ImageInfoXadmin(object):
-    list_display=[""]
-
+    list_display = ["image", "projectInfo", "add_time"]
+    search_fields = ["image", "projectInfo"]
+    list_filter = ["image", "projectInfo"]
 
 
 xadmin.site.register(ProjectInfo, ProjectInfoXadmin)
+xadmin.site.register(ImageInfo, ImageInfoXadmin)

@@ -11,7 +11,7 @@
         <div class="carousel-inner" role="listbox">
             {% for banner in all_banner %}
                 <div class="item {% if forloop.counter == 1 %}active{% endif %}"
-                     onclick="window.location.href='project.html'" style="cursor:pointer;">
+                     onclick="window.location.href='{% url 'items:item_list' %}'" style="cursor:pointer;">
                     <img src="{{ MEDIA_URL }}{{ banner.image }}" alt="First slide">
                 </div>
             {% endfor %}
