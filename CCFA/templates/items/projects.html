@@ -177,8 +177,15 @@
                                 <span class="label-text">众筹中</span> <span class="label-text">众筹成功</span>
                             </li>
                             <li>
-                                排序：<span class="label-order actvie">综合排序</span> <span class="label-text">最新上线</span>
-                                <span class="label-text">金额最多</span> <span class="label-text">支持最多</span>
+                                排序：
+                                <a href="?sort="><span {% if sort == '' %}class="label-order active"
+                                                       {% else %}class="label-text"{% endif %}>综合排序</span></a>
+                                <a href="?sort=news"><span {% if sort == 'news' %}class="label-order active"
+                                                           {% else %}class="label-text"{% endif %}>最新上线</span></a>
+                                <a href="?sort=money"><span {% if sort == 'money' %}class="label-order active"
+                                                            {% else %}class="label-text"{% endif %}>金额最多</span></a>
+                                <a href="?sort=person"><span {% if sort == 'person' %}class="label-order active"
+                                                             {% else %}class="label-text"{% endif %}>支持最多</span></a>
                             </li>
                         </ul>
                     </div>
@@ -219,14 +226,15 @@
                                         ${{ pro.money_total }}
                                     </div>
                                     <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i>
-                                        2017-20-20
+                                        {{ pro.end_time | date:"Y-m-d" }}
                                     </div>
                                     </p>
                                     <br>
                                     <div class="progress" style="margin-bottom: 4px;">
                                         <div class="progress-bar progress-bar-success" role="progressbar"
                                              aria-valuenow="40"
-                                             aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                             aria-valuemin="0" aria-valuemax="100"
+                                             style="width: {% widthratio pro.money_ing pro.money_total 100 %}%">
                                             <span>{% widthratio pro.money_ing pro.money_total 100 %}% </span>
                                         </div>
                                     </div>
@@ -249,19 +257,23 @@
             <div class="col-md-12 column" style="text-align:center">
                 <ul class="pagination">
                     {% if page_list.has_previous %}
-                        <li><a rel="nofollow" href="?pagenum={{ page_list.previous_page_number }}">上一页</a></li>
+                        <li><a rel="nofollow"
+                               href="?pagenum={{ page_list.previous_page_number }}&sort={{ sort }}">上一页</a></li>
                     {% else %}
-                        <li><a rel="nofollow" href="?pagenum=1">上一页</a></li>
+                        <li><a rel="nofollow" href="?pagenum=1&sort={{ sort }}">上一页</a></li>
                     {% endif %}
                     {% for num in page_list.paginator.page_range %}
-                        <li {% if num == page_list.number %}class="active" {% endif %}><a rel="nofollow"
-                                                                                          href="?pagenum={{ num }}">{{ num }}</a>
+                        <li {% if num == page_list.number %}class="active" {% endif %}>
+                            <a rel="nofollow" href="?pagenum={{ num }}&sort={{ sort }}">{{ num }}</a>
                         </li>
                     {% endfor %}
                     {% if page_list.has_next %}
-                        <li><a rel="nofollow" href="?pagenum{{ page_list.next_page_number }}">下一页</a></li>
+                        <li>
+                            <a rel="nofollow" href="?pagenum{{ page_list.next_page_number }}&sort={{ sort }}">下一页</a>
+                        </li>
                     {% else %}
-                        <li><a rel="nofollow" href="?pagenum{{ page_list.paginator.num.pages }}">下一页</a></li>
+                        <li><a rel="nofollow" href="?pagenum{{ page_list.paginator.num.pages }}&sort={{ sort }}">下一页</a>
+                        </li>
                     {% endif %}
                 </ul>
             </div>
