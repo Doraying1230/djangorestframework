@@ -222,27 +222,35 @@
                     <a class="navbar-brand" href="/" style="font-size:32px;">尚筹网-创意产品众筹平台</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse" style="float:right;">
-
-                    {% if request.user.is_authenticated %}
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="#">{{ request.user.username }}</a>
-                            </li>
-                            <li>
-                                <a href="{% url 'users:user_logout' %}">退出</a>
-                            </li>
-                        </ul>
-
-                    {% else %}
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="{% url 'users:user_login' %}">登录</a>
-                            </li>
-                            <li>
-                                <a href="{% url 'users:user_register' %}">注册</a>
-                            </li>
-                        </ul>
-                    {% endif %}
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-user"></i>{{ request.user.username }}
+                                <span class="caret"></span></a>
+                            {% if request.user.is_authenticated %}
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="member.html">
+                                            <i class="glyphicon glyphicon-scale"></i>会员中心</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="{% url 'users:user_logout' %}">
+                                            <i class="glyphicon glyphicon-off"></i>退出系统</a>
+                                    </li>
+                                </ul>
+                            {% else %}
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{% url 'users:user_login' %}">登录</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'users:user_register' %}">注册</a>
+                                    </li>
+                                </ul>
+                            {% endif %}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>

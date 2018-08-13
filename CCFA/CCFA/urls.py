@@ -22,7 +22,6 @@ from users.views import IndexView
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
-    url(r'^static/(?P<path>.*)', serve, {'document_root': STATIC_ROOT}),
     url(r'^static/media/(?P<path>.*)', serve, {'document_root': MEDIA_ROOT}),
     url(r'^$', IndexView.as_view(), name='index'),
     url(r'^users/', include('users.urls', namespace='users'))
