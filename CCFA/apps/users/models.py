@@ -11,16 +11,10 @@ class UserProfile(AbstractUser):
     address = models.CharField(max_length=200, verbose_name="用户地址", null=True, blank=True)
     phone = models.CharField(max_length=11, verbose_name="用户手机", null=True, blank=True)
     image = models.ImageField(upload_to='user/%y/%m', verbose_name="用户头像", null=True, blank=True, max_length=100)
-    # is_start = models.BooleanField(default=False, verbose_name="是否激活")
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
     def __str__(self):
         return self.username
-
-    # 消息通知
-    # def get_msg_count(self):
-    #     from operations.models import UserMessageInfo
-    #     return UserMessageInfo.objects.filter(userinfo=self.id, msg_status=False).count()
 
     class Meta:
         verbose_name = '用户信息'

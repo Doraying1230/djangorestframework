@@ -168,23 +168,31 @@
                     <div class="panel-body">
                         <ul id="typeList" style="list-style: none;">
                             <li>
-                                分类：<span class="label-type actvie">全部</span> <span class="label-text">科技</span> <span
-                                    class="label-text">设计</span> <span class="label-text">公益</span> <span
-                                    class="label-text">农业</span> <span class="label-text">文化</span>
+                                分类：
+                                <a href="?&cat={{ cat }}"><span
+                                        class="{% if  catgoryid == '' %}label-type{% endif %} actvie">全部</span></a>
+                                {% for catgory in all_catgoryInfo %}
+                                    <a href="?catgoryid={{ catgory.id }}&cat={{ cat }}">
+                                        <span class="{% if catgoryid == catgory.id|stringformat:"i" %}label-type{% endif %} actvie">{{ catgory.name }}</span></a>
+                                {% endfor %}
                             </li>
                             <li>
-                                状态：<span class="label-status actvie">全部</span> <span class="label-text">即将开始</span>
-                                <span class="label-text">众筹中</span> <span class="label-text">众筹成功</span>
+                                状态：
+                                <a href="?&catgoryid={{ catgory.id }}"><span class="{% if cat == '' %}label-status {% endif %}actvie">全部</span></a>
+                                <a href="?&cat=jjks&catgoryid={{ catgory.id }}"><span class="{% if cat == 'jjks' %}label-status {% endif %}actvie ">即将开始</span></a>
+                                <a href="?&cat=zcz&catgoryid={{ catgory.id }}"><span class="{% if cat ==  'zcz' %}label-status actvie{% endif %} ">众筹中</span></a>
+                                <a href="?&cat=zccg&catgoryid={{ catgory.id }}"><span class="{% if cat == 'zccg' %}label-status actvie{% endif %}">众筹成功</span></a>
+                                <a href="?&cat=zcsb&catgoryid={{ catgory.id }}"><span class="{% if cat == 'zcsb' %}label-status  actvie{% endif %}">众筹失败</span></a>
                             </li>
                             <li>
                                 排序：
-                                <a href="?sort="><span {% if sort == '' %}class="label-order active"
+                                <a href="?&catgoryid={{ catgory.id }}&cat={{ cat }}"><span {% if sort == '' %}class="label-order active"
                                                        {% else %}class="label-text"{% endif %}>综合排序</span></a>
-                                <a href="?sort=news"><span {% if sort == 'news' %}class="label-order active"
+                                <a href="?sort=news&catgoryid={{ catgory.id }}&cat={{ cat }}"><span {% if sort == 'news' %}class="label-order active"
                                                            {% else %}class="label-text"{% endif %}>最新上线</span></a>
-                                <a href="?sort=money"><span {% if sort == 'money' %}class="label-order active"
+                                <a href="?sort=money&catgoryid={{ catgory.id }}&cat={{ cat }}"><span {% if sort == 'money' %}class="label-order active"
                                                             {% else %}class="label-text"{% endif %}>金额最多</span></a>
-                                <a href="?sort=person"><span {% if sort == 'person' %}class="label-order active"
+                                <a href="?sort=person&catgoryid={{ catgory.id }}&cat={{ cat }}"><span {% if sort == 'person' %}class="label-order active"
                                                              {% else %}class="label-text"{% endif %}>支持最多</span></a>
                             </li>
                         </ul>
@@ -258,21 +266,25 @@
                 <ul class="pagination">
                     {% if page_list.has_previous %}
                         <li><a rel="nofollow"
-                               href="?pagenum={{ page_list.previous_page_number }}&sort={{ sort }}">上一页</a></li>
+                               href="?pagenum={{ page_list.previous_page_number }}&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}">上一页</a>
+                        </li>
                     {% else %}
-                        <li><a rel="nofollow" href="?pagenum=1&sort={{ sort }}">上一页</a></li>
+                        <li><a rel="nofollow" href="?pagenum=1&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}">上一页</a></li>
                     {% endif %}
                     {% for num in page_list.paginator.page_range %}
                         <li {% if num == page_list.number %}class="active" {% endif %}>
-                            <a rel="nofollow" href="?pagenum={{ num }}&sort={{ sort }}">{{ num }}</a>
+                            <a rel="nofollow"
+                               href="?pagenum={{ num }}&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}">{{ num }}</a>
                         </li>
                     {% endfor %}
                     {% if page_list.has_next %}
                         <li>
-                            <a rel="nofollow" href="?pagenum{{ page_list.next_page_number }}&sort={{ sort }}">下一页</a>
+                            <a rel="nofollow"
+                               href="?pagenum{{ page_list.next_page_number }}&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}">下一页</a>
                         </li>
                     {% else %}
-                        <li><a rel="nofollow" href="?pagenum{{ page_list.paginator.num.pages }}&sort={{ sort }}">下一页</a>
+                        <li><a rel="nofollow"
+                               href="?pagenum{{ page_list.paginator.num.pages }}&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}">下一页</a>
                         </li>
                     {% endif %}
                 </ul>
