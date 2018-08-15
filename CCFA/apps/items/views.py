@@ -1,10 +1,28 @@
 from django.shortcuts import render
 from .models import ProjectInfo, ImageInfo, CatgoryInfo
-
-# Create your views here.
 from django.views import View
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from datetime import timedelta
+from datetime import timedelta, datetime
+
+
+class ItemDetailView(View):
+    """项目详情"""
+
+    def get(self, request, pro_id):
+        all_catgoryInfo = ProjectInfo.objects.all().order_by("-add_time")[:2]
+        if pro_id:
+            item = ProjectInfo.objects.filter(id=int(pro_id))[0]
+            many_day = (item.end_time - datetime.now()).days
+
+        return render(request, 'items/project.html',
+                      {'item': item,
+                       'many_day': many_day,
+                       'all_catgoryInfo': all_catgoryInfo,
+
+                       })
+
+    def post(self, request):
+        pass
 
 
 class ItemListView(View):
@@ -20,6 +38,10 @@ class ItemListView(View):
         all_catgoryInfo = CatgoryInfo.objects.all()
         all_project = ProjectInfo.objects.all()
         self.handleTime(all_project)
+        # 搜索
+        keywords = request.GET.get('keywords', '')
+        if keywords:
+            all_project = all_project.filter(title__contains=keywords)
         # 根据状态排序
         cat = request.GET.get('cat', '')
         if cat:
@@ -53,6 +75,7 @@ class ItemListView(View):
                        'all_catgoryInfo': all_catgoryInfo,
                        'catgoryid': catgoryid,
                        'cat': cat,
+                       'keywords': keywords,
                        "page_list": page_list})
 
     def post(self, request):

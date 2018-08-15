@@ -178,22 +178,31 @@
                             </li>
                             <li>
                                 状态：
-                                <a href="?&catgoryid={{ catgory.id }}"><span class="{% if cat == '' %}label-status {% endif %}actvie">全部</span></a>
-                                <a href="?&cat=jjks&catgoryid={{ catgory.id }}"><span class="{% if cat == 'jjks' %}label-status {% endif %}actvie ">即将开始</span></a>
-                                <a href="?&cat=zcz&catgoryid={{ catgory.id }}"><span class="{% if cat ==  'zcz' %}label-status actvie{% endif %} ">众筹中</span></a>
-                                <a href="?&cat=zccg&catgoryid={{ catgory.id }}"><span class="{% if cat == 'zccg' %}label-status actvie{% endif %}">众筹成功</span></a>
-                                <a href="?&cat=zcsb&catgoryid={{ catgory.id }}"><span class="{% if cat == 'zcsb' %}label-status  actvie{% endif %}">众筹失败</span></a>
+                                <a href="?&catgoryid={{ catgory.id }}"><span
+                                        class="{% if cat == '' %}label-status {% endif %}actvie">全部</span></a>
+                                <a href="?&cat=jjks&catgoryid={{ catgory.id }}"><span
+                                        class="{% if cat == 'jjks' %}label-status {% endif %}actvie ">即将开始</span></a>
+                                <a href="?&cat=zcz&catgoryid={{ catgory.id }}"><span
+                                        class="{% if cat ==  'zcz' %}label-status actvie{% endif %} ">众筹中</span></a>
+                                <a href="?&cat=zccg&catgoryid={{ catgory.id }}"><span
+                                        class="{% if cat == 'zccg' %}label-status actvie{% endif %}">众筹成功</span></a>
+                                <a href="?&cat=zcsb&catgoryid={{ catgory.id }}"><span
+                                        class="{% if cat == 'zcsb' %}label-status  actvie{% endif %}">众筹失败</span></a>
                             </li>
                             <li>
                                 排序：
-                                <a href="?&catgoryid={{ catgory.id }}&cat={{ cat }}"><span {% if sort == '' %}class="label-order active"
-                                                       {% else %}class="label-text"{% endif %}>综合排序</span></a>
-                                <a href="?sort=news&catgoryid={{ catgory.id }}&cat={{ cat }}"><span {% if sort == 'news' %}class="label-order active"
-                                                           {% else %}class="label-text"{% endif %}>最新上线</span></a>
-                                <a href="?sort=money&catgoryid={{ catgory.id }}&cat={{ cat }}"><span {% if sort == 'money' %}class="label-order active"
-                                                            {% else %}class="label-text"{% endif %}>金额最多</span></a>
-                                <a href="?sort=person&catgoryid={{ catgory.id }}&cat={{ cat }}"><span {% if sort == 'person' %}class="label-order active"
-                                                             {% else %}class="label-text"{% endif %}>支持最多</span></a>
+                                <a href="?&catgoryid={{ catgory.id }}&cat={{ cat }}"><span
+                                        {% if sort == '' %}class="label-order active"
+                                        {% else %}class="label-text"{% endif %}>综合排序</span></a>
+                                <a href="?sort=news&catgoryid={{ catgory.id }}&cat={{ cat }}"><span
+                                        {% if sort == 'news' %}class="label-order active"
+                                        {% else %}class="label-text"{% endif %}>最新上线</span></a>
+                                <a href="?sort=money&catgoryid={{ catgory.id }}&cat={{ cat }}"><span
+                                        {% if sort == 'money' %}class="label-order active"
+                                        {% else %}class="label-text"{% endif %}>金额最多</span></a>
+                                <a href="?sort=person&catgoryid={{ catgory.id }}&cat={{ cat }}"><span
+                                        {% if sort == 'person' %}class="label-order active"
+                                        {% else %}class="label-text"{% endif %}>支持最多</span></a>
                             </li>
                         </ul>
                     </div>
@@ -202,9 +211,10 @@
                             共{{ all_project.count }}个众筹项目
                         </div>
                         <div style="float:right;">
-                            <form class="navbar-form navbar-left" role="search">
+                            <form class="navbar-form navbar-left" role="search" method="get"
+                                  action="{% url 'items:item_list' %}">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="请输入搜索内容">
+                                    <input type="text" class="form-control" placeholder="请输入搜索内容" name="keywords">
                                 </div>
                                 <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i>
                                     搜索
@@ -227,7 +237,7 @@
                                 <img alt="300x200" src="{{ MEDIA_URL }}{{ pro.image }}"/>
                                 <div class="caption">
                                     <h3 class="break">
-                                        <a href="project.html">{{ pro.title }}</a>
+                                        <a href="{% url 'items:item_detail' pro.id %}">{{ pro.title }}</a>
                                     </h3>
                                     <p>
                                     <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额"></i>
@@ -266,25 +276,27 @@
                 <ul class="pagination">
                     {% if page_list.has_previous %}
                         <li><a rel="nofollow"
-                               href="?pagenum={{ page_list.previous_page_number }}&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}">上一页</a>
+                               href="?pagenum={{ page_list.previous_page_number }}&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}&keywords={{ keywords }}">上一页</a>
                         </li>
                     {% else %}
-                        <li><a rel="nofollow" href="?pagenum=1&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}">上一页</a></li>
+                        <li><a rel="nofollow"
+                               href="?pagenum=1&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}&keywords={{ keywords }}">上一页</a>
+                        </li>
                     {% endif %}
                     {% for num in page_list.paginator.page_range %}
                         <li {% if num == page_list.number %}class="active" {% endif %}>
                             <a rel="nofollow"
-                               href="?pagenum={{ num }}&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}">{{ num }}</a>
+                               href="?pagenum={{ num }}&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}&keywords={{ keywords }}">{{ num }}</a>
                         </li>
                     {% endfor %}
                     {% if page_list.has_next %}
                         <li>
                             <a rel="nofollow"
-                               href="?pagenum{{ page_list.next_page_number }}&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}">下一页</a>
+                               href="?pagenum{{ page_list.next_page_number }}&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}&keywords={{ keywords }}">下一页</a>
                         </li>
                     {% else %}
                         <li><a rel="nofollow"
-                               href="?pagenum{{ page_list.paginator.num.pages }}&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}">下一页</a>
+                               href="?pagenum{{ page_list.paginator.num.pages }}&sort={{ sort }}&catgoryid={{ catgory.id }}&cat={{ cat }}&keywords={{ keywords }}">下一页</a>
                         </li>
                     {% endif %}
                 </ul>
