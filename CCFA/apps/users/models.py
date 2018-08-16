@@ -10,7 +10,11 @@ class UserProfile(AbstractUser):
     gender = models.CharField(choices=(('girl', '女'), ('boy', '男')), max_length=5, verbose_name="用户性别", default='girl')
     address = models.CharField(max_length=200, verbose_name="用户地址", null=True, blank=True)
     phone = models.CharField(max_length=11, verbose_name="用户手机", null=True, blank=True)
-    image = models.ImageField(upload_to='user/%y/%m', verbose_name="用户头像", null=True, blank=True, max_length=100)
+    card = models.CharField(max_length=18, verbose_name="身份证号码", blank=True, null=True)
+    cardImage = models.ImageField(upload_to='card/%y/%m', verbose_name='身份认证图片', null=True, blank=True, max_length=200)
+    image = models.ImageField(upload_to='user/%y/%m', verbose_name="用户头像", null=True, blank=True, max_length=200)
+    type = models.CharField(choices=(('sy', '商业公司'), ('gt', '个体工商户'), ('gr', '个人经营'), ('zf', '政府及非营利组织')),
+                            max_length=20, verbose_name='类型')
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
     def __str__(self):

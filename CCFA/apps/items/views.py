@@ -18,7 +18,6 @@ class ItemDetailView(View):
                       {'item': item,
                        'many_day': many_day,
                        'all_catgoryInfo': all_catgoryInfo,
-
                        })
 
     def post(self, request):

@@ -7,6 +7,16 @@ from django.contrib.auth import authenticate, logout, login
 
 # Create your views here.
 
+class UserCenterView(View):
+    """用户中心"""
+
+    def get(self, request):
+        return render(request, 'users/member.html')
+
+    def post(self, request):
+        pass
+
+
 class UserLogoutView(View):
     """Logout"""
 

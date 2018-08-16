@@ -103,7 +103,8 @@
                             {% if request.user.is_authenticated %}
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="#"><i class="glyphicon glyphicon-scale"></i> 会员中心</a>
+                                        <a href="{% url 'users:user_center' %}">
+                                            <i class="glyphicon glyphicon-scale"></i> 会员中心</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
