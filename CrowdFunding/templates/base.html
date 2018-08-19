@@ -138,13 +138,13 @@
                                     <a rel="nofollow" href="{% url 'index' %}"><i class="glyphicon glyphicon-home"></i> 众筹首页</a>
                                 </li>
                                 <li {% if request.path == "/fundings/funding_list/" %} class="active" {% endif %}>
-                                    <a rel="nofollow" href="{% url 'fundings:funding_list' %}"><i class="glyphicon glyphicon-th-large"></i> 项目总览</a>
+                                    <a rel="nofollow" href="#"><i class="glyphicon glyphicon-th-large"></i> 项目总览</a>
                                 </li>
                                 <li {% if request.path|slice:":8" == "/courses" %}class="active"{% endif %}>
-                                    <a rel="nofollow" href="{% url 'fundings:funding_start' %}"><i class="glyphicon glyphicon-edit"></i> {% block funding_tab %}发起项目{% endblock %}</a>
+                                    <a rel="nofollow" href="#"><i class="glyphicon glyphicon-edit"></i> {% block funding_tab %}发起项目{% endblock %}</a>
                                 </li>
                                 <li {% if request.path|slice:":8" == "/courses" %}class="active"{% endif %}>
-                                    <a rel="nofollow" href="minecrowdfunding.html"><i class="glyphicon glyphicon-user"></i> 我的众筹</a>
+                                    <a rel="nofollow" href="#"><i class="glyphicon glyphicon-user"></i> 我的众筹</a>
                                 </li>
                             </ul>
                         </div>

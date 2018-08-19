@@ -219,7 +219,7 @@
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html" style="font-size:32px;">尚筹网-创意产品众筹平台</a>
+                    <a class="navbar-brand" href="/" style="font-size:32px;">尚筹网-创意产品众筹平台</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse" style="float:right;">
                     <ul class="nav navbar-nav navbar-right">
@@ -235,7 +235,8 @@
                                     <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{% url 'users:user_center' %}"><i class="glyphicon glyphicon-scale"></i> 会员中心</a>
+                                        <a href="{% url 'users:user_center' %}"><i
+                                                class="glyphicon glyphicon-scale"></i> 会员中心</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
@@ -273,7 +274,7 @@
     <div class="carousel-inner" role="listbox">
         {% for banner in all_banner %}
             <div class="item {% if forloop.counter0 == 0 %}active{% endif %}"
-                 onclick="window.location.href='#'"
+                 onclick="window.location.href='{% url 'items:item_detail' banner.id %}'"
                  style="cursor:pointer;">
                 <img src="{{ MEDIA_URL }}{{ banner.image }}" alt="First slide">
             </div>
@@ -305,7 +306,7 @@
                 <h2>{{ funding.name }}</h2>
                 <p>{{ funding.brief }}</p>
                 <p>
-                    <a class="btn btn-default" href="{% url 'fundings:funding_detail' funding.id %}" role="button">项目详情
+                    <a class="btn btn-default" href="#" role="button">项目详情
                         &raquo;</a>
                 </p>
             </div>
@@ -321,7 +322,7 @@
                     <div class="box ui-draggable mainBox">
                         <div class="mHd" style="">
                             <div class="path">
-                                <a href="{% url 'fundings:funding_list' %}?cate={{ forloop.counter }}">更多...</a>
+                                <a href="#">更多...</a>
                             </div>
                             <h3>{{ category }}
                                 <small style="color:#FFF;">
@@ -346,7 +347,7 @@
 " src="{{ MEDIA_URL }}{{ funding.front_image }}" funding_id="{{ funding.id }}"/>
                                             <div class="caption">
                                                 <h3 class="break"><a
-                                                        href="{% url 'fundings:funding_detail' funding.id %}">{{ funding.name }}</a>
+                                                        href="#">{{ funding.name }}</a>
                                                 </h3>
                                                 <p>
                                                 <div style="float:left;"><i class="glyphicon glyphicon-screenshot"

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from .views import UserLogoutView, UserRegisterView, UserLoginView, UserCenterView, UserVerifyView, UserApplyView, \
-    UserApplyOneView, UserApplyTwoView, UserApplyThreeView
+    UserApplyOneView, UserApplyTwoView, UserApplyThreeView,UserRestartView
 
 urlpatterns = [
     url(r'^user_logout/$', UserLogoutView.as_view(), name='user_logout'),
@@ -27,5 +27,7 @@ urlpatterns = [
     url(r'^user_applyOne/$', UserApplyOneView.as_view(), name='user_applyOne'),
     url(r'^user_applyTwo/$', UserApplyTwoView.as_view(), name='user_applyTwo'),
     url(r'^user_applyThree/$', UserApplyThreeView.as_view(), name='user_applyThree'),
+    url(r'^user_restart/$', UserRestartView.as_view(), name='user_restart'),
+
 
 ]
