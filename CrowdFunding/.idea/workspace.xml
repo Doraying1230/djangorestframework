@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b50ba8d3-a734-4ee4-9265-273f8542fafd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/items/project.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/items/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/items/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/items/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/applyThree.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/applyThree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testdayday/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testdayday/extra_apps/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testdayday/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../testdayday/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testdayday/.idea/testdayday.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../testdayday/.idea/testdayday.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testdayday/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../testdayday/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testdayday/testdayday/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../testdayday/testdayday/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +23,7 @@
     <session id="1269750876">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="1" />
@@ -82,8 +82,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/items/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="540">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
                 <marker date="1534571483010" expanded="true" signature="159:164" ph="..." />
@@ -164,7 +164,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="544" />
     <option name="y" value="37" />
     <option name="width" value="1386" />
@@ -204,7 +204,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/python/GuLiEdu" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testdayday" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -281,9 +281,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-60" y="198" width="1907" height="894" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1521386" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14978679" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -534,8 +534,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/items/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="540">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
             <marker date="1534571483010" expanded="true" signature="159:164" ph="..." />
