@@ -12,9 +12,11 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import sys
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -26,7 +28,6 @@ SECRET_KEY = 'ekj#&hmb!b7lc67gkjx^j9m+hv#o-=y^817hyu2n0dy=bxo6=&'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -41,6 +42,9 @@ INSTALLED_APPS = [
     'goods',
     'carts',
     'orders',
+    'xadmin',
+    'DjangoUeditor',
+    'crispy_forms',
 ]
 AUTH_USER_MODEL = 'users.UserProfile'
 MIDDLEWARE = [
@@ -75,7 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'testdayday.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -89,7 +92,6 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -109,7 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -123,14 +124,13 @@ USE_L10N = True
 
 USE_TZ = False
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
+    os.path.join(BASE_DIR, 'static')
 ]
 
 MEDIA_URL = '/static/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'static/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
